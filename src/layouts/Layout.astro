@@ -9,11 +9,26 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="The TTRPG companion you can't life without." />
+		<meta name="theme-color" content="#13151a" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@nurl_inc" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="The TTRPG companion you can't life without." />
+		<meta name="twitter:image" content="https://astro.build/twitter-card.jpg" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="The TTRPG companion you can't life without." />
+		<meta property="og:image" content="https://astro.build/twitter-card.jpg" />
+		<meta property="og:url" content="https://nurl.website" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Nurl" />
+		<meta property="og:locale" content="en_US" />
+
 		<title>{title}</title>
 	</head>
 	<body>
