@@ -3,13 +3,7 @@
 ---
 
 <div class="feedback-form">
-  <form
-    data-netlify="true"
-    netlify-honeypot
-    name="beta_signup"
-    method="POST"
-    action="/success"
-  >
+  <form name="beta_signup" method="post" action="/success">
     <input type="hidden" name="form-name" value="beta_signup" />
 
     <p class="hidden">
@@ -22,9 +16,9 @@
       Sign up for early access
       <input
         id="email"
-        type="email"
         name="email"
         placeholder="email@example.com"
+        type="email"
         required
       />
     </label>
