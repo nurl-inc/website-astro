@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
 import Layout from '../layouts/Layout.astro';
-import { actionBg, surface, text, infoBg } from '../components/GlobalStyles.astro';
+import { actionBg, surface, text } from '../components/GlobalStyles.astro';
 import '../components/GlobalStyles.astro';
 
 const socialLinks = [
@@ -60,22 +60,25 @@ const socialLinks = [
 				Sign up for early access
 			</p>
 
-			<form name="contact" netlify>
-				<p>
-					<label aria-label="Email" for="email">
-						<input
-							aria-required="true"
-							type="email"
-							id="email"
-							name="email"
-							placeholder="email@example.com"
-							required
-						/>
-					</label>
-				</p>
-				<p>
-					<button type="submit">Let me in</button>
-				</p>
+			<form name="contact" data-netlify netlify-honeypt>
+				<p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
+				<input type="hidden" name="form-name" value="contact" />
+
+				<label aria-label="Email" for="email">
+					<input
+						aria-required="true"
+						type="email"
+						id="email"
+						name="email"
+						placeholder="email@example.com"
+						required
+					/>
+				</label>
+				<button type="submit">Let me in</button>
 			</form>
 		</section>
 	</main>
@@ -159,6 +162,10 @@ const socialLinks = [
 	.headline-cta {
 		font-size: 1.5rem;
 		padding-bottom: 1rem;
+	}
+
+	.hidden {
+		display: none;
 	}
 
 	input {
