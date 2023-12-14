@@ -44,8 +44,8 @@ const socialLinks = [
         {
           socialLinks.map((link) => (
             <li>
-              <a class="social-link" href={link.url}>
-                <Icon pack="mdi" name={link.icon} />
+              <a aria-label={link.name} class="social-link" href={link.url}>
+                <Icon aria-hidden pack="mdi" name={link.icon} />
               </a>
             </li>
           ))
@@ -134,7 +134,7 @@ const socialLinks = [
 
   small {
     font-size: 0.75rem;
-    color: rgba(225 225 225 / 0.5);
+    color: rgba(225 225 225 / 0.7);
   }
 
   @media (min-width: 768px) {
