@@ -1,66 +1,132 @@
 ---
+import Footer from "../components/Footer.astro";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
+const surface = "#ffffff";
+const text = "#000000";
+
+const actionBg = "#0000ff";
+const dangerBg = "#ff0000";
+const infoBg = "#00aeef";
+const warningBg = "#ffed00";
+
+const sandboxGold = "#ffb533";
+const oneUpPink = "#ff00ff";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "k5tucwiaeh");
+    </script>
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="The TTRPG companion you can't life without." />
-		<meta name="theme-color" content="#13151a" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@nurl_inc" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content="The TTRPG companion you can't life without." />
-		<meta name="twitter:image" content="https://astro.build/twitter-card.jpg" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content="The TTRPG companion you can't life without." />
-		<meta property="og:image" content="https://astro.build/twitter-card.jpg" />
-		<meta property="og:url" content="https://nurl.website" />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Nurl" />
-		<meta property="og:locale" content="en_US" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="The TTRPG companion you can't life without."
+    />
+    <meta name="theme-color" content="#13151a" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nurl_inc" />
+    <meta name="twitter:title" content={title} />
+    <meta
+      name="twitter:description"
+      content="The TTRPG companion you can't life without."
+    />
+    <meta name="twitter:image" content="https://astro.build/twitter-card.jpg" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="The TTRPG companion you can't life without."
+    />
+    <meta property="og:image" content="https://astro.build/twitter-card.jpg" />
+    <meta property="og:url" content="https://nurl.website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nurl" />
+    <meta property="og:locale" content="en_US" />
 
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+
+    <Footer />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+<style
+  is:global
+  define:vars={{
+    surface: surface,
+    text: text,
+    actionBg: actionBg,
+    dangerBg: dangerBg,
+    infoBg: infoBg,
+    warningBg: warningBg,
+    sandboxGold: sandboxGold,
+    oneUpPink: oneUpPink,
+  }}
+>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  html {
+    background-color: var(--surface);
+    color: var(--text);
+    /* color-scheme: light dark; */
+    font-family: system-ui, sans-serif;
+    font-size: 1em;
+    line-height: 1.3;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  button,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 </style>

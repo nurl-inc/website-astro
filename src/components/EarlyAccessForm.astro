@@ -1,0 +1,74 @@
+---
+
+---
+
+<div class="feedback-form">
+  <form
+    data-netlify="true"
+    netlify-honeypot
+    name="beta_signup"
+    method="POST"
+    action="/success"
+  >
+    <p class="hidden">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
+
+    <label for="email">
+      Sign up for early access
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="email@example.com"
+        required
+      />
+    </label>
+    <button type="submit">Get it</button>
+  </form>
+</div>
+
+<style>
+  .hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  label {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    border: 1px solid var(--text);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-inline-end: 0.5rem;
+    padding-inline-start: 0.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    background-color: var(--actionBg);
+    border-radius: 2rem;
+    color: var(--surface);
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 4rem;
+    width: 100%;
+  }
+</style>
