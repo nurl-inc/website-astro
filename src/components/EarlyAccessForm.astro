@@ -3,7 +3,13 @@
 ---
 
 <div class="feedback-form">
-  <form name="beta_signup" method="post" action="/success">
+  <form
+    name="beta_signup"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    method="post"
+    action="/success"
+  >
     <input type="hidden" name="form-name" value="beta_signup" />
 
     <p class="hidden">
