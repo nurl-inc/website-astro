@@ -1,7 +1,10 @@
 {
   "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.configPath": "./prettierrc.mjs",
+  "files.associations": {
+    "*.mdoc": "markdown"
+  },
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.configPath": "./prettierrc.mjs"
+  }
 }

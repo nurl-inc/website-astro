@@ -1,11 +1,32 @@
 ---
+import { Icon } from "astro-icon";
+import shots from "../assets/shots.png";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
+
+const trollLines = [
+  "Loved by everyone - everywhere...literally.",
+  "Voted best app by every generation that exists.",
+  "The perfect wedding gift - trust us.",
+];
+const random = () => Math.random().toString()[2];
+const funLine = trollLines[parseInt(random())] ?? trollLines[0];
+
+const TAGS = [
+  "Extensions",
+  "AI Powered",
+  "Group Chat",
+  "Private GM Notes",
+  "Public Notes",
+  "Developer API",
+];
+const shuffle = (arr: Array<unknown>) =>
+  [...arr].sort(() => 0.5 - Math.random());
 ---
 
 <Layout title="Nurl TTRPG">
   <main>
-    <section>
+    <section class="main-section">
       <p class="headline">The TTRPG companion you can't live without</p>
       <p class="headline-support">
         Nurl helps player's and GM's alike become the "10x Player"&trade; by
@@ -17,6 +38,57 @@ import EarlyAccessForm from "../components/EarlyAccessForm.astro";
       <EarlyAccessForm />
     </section>
   </main>
+
+  <section class="gray-bg content center">
+    <p class="bold-text">{funLine}</p>
+  </section>
+
+  <section class="content info-bg gameplay">
+    <div class="gamplay-info">
+      <h3 class="headline">Redefining Gameplay</h3>
+      <p class="body">
+        A single app loaded with everything you need to play a session and data
+        that lasts forever.
+      </p>
+    </div>
+    <div class="img-wrapper">
+      <img src={shots.src} alt="Nurl Beta Screenshot" />
+    </div>
+  </section>
+
+  <section class="gray-bg content center x-hidden">
+    <div class="animating-row">
+      {
+        shuffle(TAGS)
+          .slice(0, TAGS.length)
+          .map((tag) => <p class="bold-text loop-tag">{tag}</p>)
+      }
+    </div>
+  </section>
+
+  <section class="content center main-section">
+    <h3 class="headline">Extension Marketplace</h3>
+    <p class="body">
+      Nurl is built with an open-source extension API that allows anyone to
+      create, share, or sell their own extensions.
+    </p>
+    <a
+      class="content flex-button"
+      href="https://developers.nurl.app"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <p class="bold-text pink-text">Learn More</p>
+      <Icon aria-hidden pack="mdi" name="external-link" width="1.2rem" />
+    </a>
+  </section>
+
+  <section class="content center cta">
+    <p class="bold-text pb-1 pink-text">
+      Join the Anti-TPK TPK Social Club &trade;
+    </p>
+    <EarlyAccessForm />
+  </section>
 </Layout>
 
 <style>
@@ -32,6 +104,16 @@ import EarlyAccessForm from "../components/EarlyAccessForm.astro";
     text-align: center;
   }
 
+  .main-section,
+  .cta {
+    margin: 0 auto;
+    max-width: 60ch;
+  }
+
+  .cta {
+    border-top: 1px dashed rgba(0 0 0 / 0.08);
+  }
+
   .headline {
     font-size: 2rem;
     font-weight: bold;
@@ -42,7 +124,106 @@ import EarlyAccessForm from "../components/EarlyAccessForm.astro";
     padding-bottom: 2.5rem;
     padding-top: 2.5rem;
     line-height: 1.5;
+  }
+
+  .content {
+    padding-bottom: 2rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-top: 2rem;
+  }
+
+  .x-hidden {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .flex-button {
+    align-items: center;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width: max-content;
+  }
+
+  .flex-button:hover {
+    color: var(--text);
+  }
+
+  .animating-row {
+    animation-name: xScroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-duration: 20000ms;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    width: max-content;
+  }
+
+  .body {
+    fontsize: 1.2rem;
+    font-weight: 600;
+    max-width: 80ch;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .img-wrapper {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    width: 100%;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .gameplay {
+    text-align: center;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .gray-bg {
+    background-color: rgba(0 0 0 / 0.03);
+  }
+
+  .info-bg {
+    background-color: var(--infoBg);
+  }
+
+  .bold-text {
+    font-weight: bold;
+  }
+
+  .pb-1 {
+    padding-bottom: 1rem;
+  }
+
+  .pink-text {
+    color: var(--oneUpPink);
+  }
+
+  .gamplay-info {
     max-width: 60ch;
+  }
+
+  @keyframes xScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   @media (min-width: 768px) {
@@ -56,6 +237,54 @@ import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 
     .headline-cta {
       font-size: 2rem;
+    }
+
+    .animating-row {
+      animation: none;
+      margin: 0 auto;
+      width: auto;
+    }
+
+    .img-wrapper {
+      max-width: 75%;
+    }
+
+    .gameplay {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
+      padding-inline-start: 2rem;
+      padding-inline-end: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .headline {
+      font-size: 4rem;
+    }
+
+    .headline-support {
+      font-size: 2rem;
+    }
+
+    .headline-cta {
+      font-size: 2.5rem;
+    }
+
+    .main-section,
+    .gamplay-info {
+      max-width: 80ch;
+    }
+
+    .bold-text,
+    .body {
+      font-size: 1.5rem;
+    }
+
+    .cta {
+      padding: 4rem;
     }
   }
 </style>
