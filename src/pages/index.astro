@@ -56,6 +56,16 @@ const shuffle = (arr: Array<unknown>) =>
     </div>
   </section>
 
+  <section class="content yellow-bg gameplay">
+    <div class="gamplay-info">
+      <h3 class="headline">Everything you need</h3>
+      <p class="body">
+        All your game session needs in one place. No more switching between
+        tabs, apps, or devices.
+      </p>
+    </div>
+  </section>
+
   <section class="gray-bg content center x-hidden">
     <div class="animating-row">
       {
@@ -69,27 +79,25 @@ const shuffle = (arr: Array<unknown>) =>
   <section class="content center main-section">
     <h3 class="headline">Extension Marketplace</h3>
     <p class="body">
-      Nurl is built with an open-source extension API that allows anyone to
-      create, share, or sell their own extensions.
+      Nurl offers an open-source extension API, empowering users to effortlessly
+      create, share, and even monetize their own extensions.
     </p>
     <a
-      class="content flex-button"
+      class="content flex-button bold-text pink-text"
       href="https://developers.nurl.app"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <p class="bold-text pink-text">Learn More</p>
+      Visit Nurl Developers
       <Icon aria-hidden pack="mdi" name="external-link" width="1.2rem" />
     </a>
   </section>
 
   <section class="content center cta">
-    <p class="bold-text pb-1 danger-text">
+    <p class="bold-text danger-text pb-1">
       Join the Anti-TPK TPK Social Club &trade;
     </p>
-    <a class="cta-link" href="#cta-form">
-      <p class="bold-text headline-cta">Get Early Access</p>
-    </a>
+    <EarlyAccessForm />
   </section>
 </Layout>
 
@@ -102,7 +110,6 @@ const shuffle = (arr: Array<unknown>) =>
     padding-bottom: 4rem;
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
-    padding-top: 4rem;
     text-align: center;
   }
 
@@ -197,6 +204,11 @@ const shuffle = (arr: Array<unknown>) =>
 
   .gray-bg {
     background-color: rgba(0 0 0 / 0.03);
+  }
+
+  .yellow-bg {
+    background-color: var(--text);
+    color: var(--infoBg);
   }
 
   .info-bg {

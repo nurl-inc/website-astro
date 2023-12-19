@@ -1,92 +1,47 @@
 ---
-let formName = "beta-signup";
+
 ---
 
-<div class="feedback-form">
-  <form
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    method="POST"
-    name={formName}
-    action="/thanks"
+<div class="sign-up">
+  <p>Join the beta app</p>
+  <a
+    class="button"
+    href="https://beta.nurl.app"
+    target="_blank"
+    rel="noopener noreferrer"
   >
-    <input type="hidden" name="form-name" value={formName} />
-
-    <p class="hidden">
-      <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
-      </label>
-    </p>
-
-    <label for="email">
-      Sign up for early access
-      <input
-        autocomplete="email"
-        id="email"
-        name="email"
-        placeholder="email@example.com"
-        type="email"
-        required
-      />
-    </label>
-    <button type="submit">Get it</button>
-  </form>
-
-  <style>
-    .hidden {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-    }
-
-    form {
-      max-width: 60ch;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    input {
-      border: 1px solid var(--text);
-      border-radius: 0.25rem;
-      font-size: 1rem;
-      margin-top: 1rem;
-      padding-inline-end: 0.5rem;
-      padding-inline-start: 0.5rem;
-      height: 3.5rem;
-      margin-bottom: 1rem;
-      width: 100%;
-    }
-
-    button {
-      appearance: none;
-      border: none;
-      background-color: var(--actionBg);
-      border-radius: 2rem;
-      color: var(--warningBg);
-      font-size: 1.2rem;
-      font-weight: bold;
-      height: 4rem;
-      width: 100%;
-    }
-
-    button:hover {
-      filter: brightness(1.8);
-    }
-
-    @media screen and (min-width: 768px) {
-      button {
-        width: 50%;
-      }
-    }
-  </style>
+    Sign up
+  </a>
 </div>
+
+<style>
+  .sign-up {
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+
+  p {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    align-items: center;
+    border: none;
+    background-color: var(--actionBg);
+    border-radius: 2rem;
+    display: inline-flex;
+    color: var(--warningBg);
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .button:hover {
+    filter: brightness(1.8);
+  }
+</style>
