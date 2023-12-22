@@ -1,8 +1,10 @@
 ---
 import { Icon } from "astro-icon";
-import shots from "../assets/shots.webp";
+import { Picture } from "astro:assets";
+import dashboard from "../assets/dashboard.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
+import Card from "../components/Card.astro";
 
 const trollLines = [
   "Loved by everyone - everywhere...literally.",
@@ -26,77 +28,81 @@ const shuffle = (arr: Array<unknown>) =>
 
 <Layout title="Nurl TTRPG">
   <main>
-    <section class="main-section">
-      <h2 class="headline">The TTRPG companion you can't live without</h2>
+    <section>
+      <h2>The app that super powers your game sessions.</h2>
       <p class="headline-support">
-        Nurl helps players and GM's alike become the "10x Player"&trade; by
-        providing a fully extensible, customizable, and interactive experience.
+        GM's and Players can finally deliver the best game experience possible
+        without sweating the "small stuff".
       </p>
     </section>
-
-    <section id="cta-form">
-      <EarlyAccessForm />
-    </section>
+    <EarlyAccessForm />
   </main>
 
-  <section class="gray-bg content center">
-    <p class="bold-text">{funLine}</p>
-  </section>
-
-  <section class="content info-bg gameplay">
-    <div class="gamplay-info">
-      <h3 class="headline">Redefining Gameplay</h3>
-      <p class="body">
-        A single app loaded with everything you need to play a session and data
-        that lasts forever.
-      </p>
-    </div>
-    <div class="img-wrapper">
-      <img src={shots.src} alt="Nurl Beta Screenshot" />
-    </div>
-  </section>
-
-  <section class="content yellow-bg gameplay">
-    <div class="gamplay-info">
-      <h3 class="headline">Everything you need</h3>
-      <p class="body">
-        All your game session needs in one place. No more switching between
-        tabs, apps, or devices.
-      </p>
-    </div>
-  </section>
-
-  <section class="gray-bg content center x-hidden">
-    <div class="animating-row">
-      {
-        shuffle(TAGS)
-          .slice(0, TAGS.length)
-          .map((tag) => <p class="bold-text loop-tag">{tag}</p>)
-      }
-    </div>
-  </section>
-
-  <section class="content center main-section">
-    <h3 class="headline">Extension Marketplace</h3>
-    <p class="body">
-      Nurl offers an open-source extension API, empowering users to effortlessly
-      create, share, and even monetize their own extensions.
+  <section class="dashboard-wrapper">
+    <Picture
+      alt="Nurl Beta Dashboard Screenshot"
+      formats={["webp"]}
+      src={dashboard}
+    />
+    <p>
+      Nurl is the table-top RPG app for enhancing IRL or hybrid game sessions.
     </p>
-    <a
-      class="content flex-button bold-text pink-text"
-      href="https://developers.nurl.app"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Visit Nurl Developers
-      <Icon aria-hidden pack="mdi" name="external-link" width="1.2rem" />
+  </section>
+
+  <section class="section-change-play">
+    <h3>Nurl will change how you play the game.</h3>
+    <p class="headline-support">
+      Creativity and strategy are the most important parts of any game session.
+    </p>
+    <p>
+      With so many things to keep track of, it's easy to get distracted and lose
+      focus. Nurl helps you stay focused on the game by taking care of the
+      "small stuff".
+    </p>
+
+    <div class="card-container">
+      <Card
+        title="Single Source of Truth"
+        body="We bring all the tools you need to run a game session into one place."
+        href="/"
+      />
+      <Card
+        title="AI Powered"
+        body="We use AI and automation to make your game sessions more immersive and engaging than ever before."
+        href="/"
+      />
+      <Card
+        title="Extension Library"
+        body="We create a dashboard for you to install and use extensions to help streamline your sessions."
+        href="/"
+      />
+    </div>
+  </section>
+
+  <section class="section-developers">
+    <h3>Developers</h3>
+    <p class="headline-support">Built by developers for developers.</p>
+    <p>
+      We're building a platform for developers to create extensions that
+      integrate with Nurl.
+    </p>
+    <p>
+      Create, publish, and sell your extensions to the Nurl community. We'll
+      handle the rest.
+    </p>
+
+    <a class="dev-btn" href="https://developers.nurl.app">
+      Visit developers.nurl.app <Icon
+        aria-hidden
+        pack="mdi"
+        name="external-link"
+        class="icon"
+      />
     </a>
   </section>
 
-  <section class="content center cta">
-    <p class="bold-text danger-text pb-1">
-      Join the Anti-TPK TPK Social Club &trade;
-    </p>
+  <section>
+    <h3>Join the Anti-TPK TPK Social Club &trade;</h3>
     <EarlyAccessForm />
   </section>
 </Layout>
@@ -108,225 +114,96 @@ const shuffle = (arr: Array<unknown>) =>
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 4rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
-    text-align: center;
+
+    section {
+      padding-top: 1rem;
+    }
   }
 
-  .main-section,
-  .cta {
-    margin: 0 auto;
-    max-width: 60ch;
-  }
-
-  .cta {
-    border-top: 1px dashed rgba(0 0 0 / 0.08);
-  }
-
-  .headline {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .headline-support {
-    font-size: 1.5rem;
-    padding-bottom: 2.5rem;
-    padding-top: 2.5rem;
-    line-height: 1.5;
-  }
-
-  .content {
+  section {
     padding-bottom: 2rem;
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
     padding-top: 2rem;
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
   }
 
-  .x-hidden {
-    overflow-x: hidden;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .headline-support {
+    font-size: 1.5rem;
+  }
+
+  :is(.section-developers, .dashboard-wrapper) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard-wrapper {
+    margin: 0 auto;
+    text-align: center;
     width: 100%;
+
+    picture,
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-top: 2rem;
+    }
   }
 
-  .flex-button {
+  h3 {
+    color: var(--n00bYellow);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-change-play {
+    background-color: var(--wizardWhite);
+    color: var(--tpkBlack);
+    padding-inline-start: 2.3rem;
+    padding-inline-end: 2.3rem;
+
+    h3 {
+      color: var(--fourXBlue);
+    }
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .dev-btn {
     align-items: center;
     border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 0 auto;
-    padding: 1rem;
-    width: max-content;
-  }
-
-  .flex-button:hover {
-    color: var(--text);
-  }
-
-  .animating-row {
-    animation-name: xScroll;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-duration: 20000ms;
-    align-items: center;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 2rem;
-    width: max-content;
-  }
-
-  .body {
-    fontsize: 1.2rem;
-    font-weight: 600;
-    max-width: 80ch;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-
-  .img-wrapper {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    text-align: center;
-    width: 100%;
-
-    img {
-      margin: 0 auto;
-    }
-  }
-
-  .gameplay {
-    text-align: center;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .gray-bg {
-    background-color: rgba(0 0 0 / 0.03);
-  }
-
-  .yellow-bg {
-    background-color: var(--text);
-    color: var(--infoBg);
-  }
-
-  .info-bg {
-    background-color: var(--infoBg);
-  }
-
-  .bold-text {
-    font-weight: bold;
-  }
-
-  .pb-1 {
-    padding-bottom: 1rem;
-  }
-
-  .danger-text {
-    color: var(--dangerBg);
-  }
-
-  .pink-text {
-    color: var(--actionBg);
-  }
-
-  .gamplay-info {
-    max-width: 60ch;
-  }
-
-  .cta-link {
-    align-items: center;
-    border: none;
+    border: 1px solid var(--sandboxGold);
+    color: var(--wizardWhite);
     display: inline-flex;
-    background-color: var(--actionBg);
-    border-radius: 2rem;
-    color: var(--warningBg);
-    font-size: 1.2rem;
-    font-weight: bold;
-    height: 4rem;
+    font-size: 1.125rem;
+    gap: 0.5rem;
+    height: 3rem;
     justify-content: center;
-    margin-top: 2rem;
+    text-decoration: none;
     width: 100%;
-  }
 
-  .cta-link:hover {
-    color: var(--surface);
-  }
-
-  @keyframes xScroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .cta-link {
-      width: auto;
-      padding-inline-start: 4rem;
-      padding-inline-end: 4rem;
-    }
-    .headline {
-      font-size: 3rem;
-    }
-
-    .headline-support {
-      font-size: 2rem;
-    }
-
-    .headline-cta {
-      font-size: 2rem;
-    }
-
-    .animating-row {
-      animation: none;
-      margin: 0 auto;
-      width: auto;
-    }
-
-    .img-wrapper {
-      max-width: 75%;
-    }
-
-    .gameplay {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      justify-content: space-between;
-      padding-inline-start: 2rem;
-      padding-inline-end: 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .headline {
-      font-size: 4rem;
-    }
-
-    .headline-support {
-      font-size: 2rem;
-    }
-
-    .headline-cta {
-      font-size: 2.5rem;
-    }
-
-    .main-section,
-    .gamplay-info {
-      max-width: 80ch;
-    }
-
-    .bold-text,
-    .body {
-      font-size: 1.5rem;
-    }
-
-    .cta {
-      padding: 4rem;
+    .icon {
+      height: 1.5rem;
+      width: 1.5rem;
     }
   }
 </style>

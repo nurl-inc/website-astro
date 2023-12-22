@@ -15,14 +15,30 @@ const dangerBg = "#e30000";
 const infoBg = "#00aeef";
 const warningBg = "#ffed00";
 
+// New
+const wizardWhite = "#ffffff";
+const tpkBlack = "#000000";
+
+const fourXBlue = "#0000ff";
 const sandboxGold = "#ffb533";
-const oneUpPink = "#ff00ff";
+const oneUpPink = "#ff2aff";
+const rageQuitRed = "#ff0000";
+const manaBlue = "#00aeef";
+const oneUpGreen = "#43a047";
+const n00bYellow = "#ffed00";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -87,14 +103,22 @@ const oneUpPink = "#ff00ff";
 <style
   is:global
   define:vars={{
-    surface: surface,
-    text: text,
-    actionBg: actionBg,
-    dangerBg: dangerBg,
-    infoBg: infoBg,
-    warningBg: warningBg,
-    sandboxGold: sandboxGold,
-    oneUpPink: oneUpPink,
+    surface,
+    text,
+    actionBg,
+    dangerBg,
+    infoBg,
+    warningBg,
+    // new
+    wizardWhite,
+    tpkBlack,
+    fourXBlue,
+    rageQuitRed,
+    manaBlue,
+    oneUpGreen,
+    n00bYellow,
+    sandboxGold,
+    oneUpPink,
   }}
 >
   *,
@@ -110,26 +134,28 @@ const oneUpPink = "#ff00ff";
   }
 
   html {
-    background-color: var(--surface);
-    color: var(--text);
+    background-color: var(--fourXBlue);
+    color: var(--wizardWhite);
     /* color-scheme: light dark; */
-    font-family: system-ui, sans-serif;
+    font-family: "Lato", system-ui, sans-serif;
+    font-weight: 400;
     font-size: 1em;
     line-height: 1.3;
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
   }
 
-  body {
-    min-height: 100vh;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 900;
   }
 
-  img,
-  picture,
-  svg,
-  video {
-    display: block;
-    max-width: 100%;
+  body {
+    min-height: 100vh;
   }
 
   input,

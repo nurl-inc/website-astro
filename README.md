@@ -52,3 +52,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Convert to WebP img
+
+```sh
+cwebp -q 50 images/flower1.jpg -o images/flower1.webp
+```

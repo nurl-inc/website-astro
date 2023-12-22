@@ -1,47 +1,52 @@
 ---
-
+import { Icon } from "astro-icon";
 ---
 
-<div class="sign-up">
-  <p>Join the beta app</p>
-  <a
-    class="button"
-    href="https://beta.nurl.app"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Sign up
+<div>
+  <p class="cta">Join the beta app</p>
+  <a href="https://beta.nurl.app" target="_blank" rel="noopener noreferrer">
+    Sign up, it's free!
+    <Icon aria-hidden class="icon" pack="mdi" name="external-link" />
   </a>
 </div>
 
 <style>
-  .sign-up {
-    max-width: 60ch;
-    margin: 0 auto;
+  div {
+    text-align: center;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    width: 100%;
+
+    .cta {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
   }
 
-  p {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  .button {
+  a {
     align-items: center;
     border: none;
-    background-color: var(--actionBg);
+    background-color: var(--n00bYellow);
     border-radius: 2rem;
     display: inline-flex;
-    color: var(--warningBg);
+    color: var(--tpkBlack);
     font-size: 1.2rem;
     font-weight: bold;
+    gap: 0.5rem;
     height: 4rem;
     justify-content: center;
+    text-decoration: none;
     width: 100%;
   }
 
-  .button:hover {
+  a:hover {
     filter: brightness(1.8);
+  }
+
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 </style>
