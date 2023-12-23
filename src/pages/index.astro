@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import dashboard from "../assets/dashboard.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
@@ -20,11 +20,7 @@ import Card from "../components/Card.astro";
   </main>
 
   <section class="dashboard-wrapper">
-    <Picture
-      alt="Nurl Beta Dashboard Screenshot"
-      formats={["webp"]}
-      src={dashboard}
-    />
+    <Image alt="Nurl Beta Dashboard Screenshot" src={dashboard} />
     <p>
       Nurl is the table-top RPG app for enhancing IRL or hybrid game sessions.
     </p>
