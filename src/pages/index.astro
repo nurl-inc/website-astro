@@ -20,11 +20,18 @@ import Card from "../components/Card.astro";
   </main>
 
   <section class="dashboard-wrapper">
-    <Picture
-      alt="Nurl Beta Dashboard Screenshot"
-      formats={["webp"]}
-      src={dashboard}
-    />
+    <picture>
+      <source srcset={dashboard.src} type="image/webp" />
+      <img
+        src={dashboard.src}
+        alt="Nurl Dashboard"
+        loading="lazy"
+        decoding="async"
+        width="1243"
+        height=""
+        870
+      />
+    </picture>
     <p>
       Nurl is the table-top RPG app for enhancing IRL or hybrid game sessions.
     </p>
