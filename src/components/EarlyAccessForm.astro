@@ -16,13 +16,13 @@ import { Icon } from "astro-icon";
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
     width: 100%;
+  }
 
-    .cta {
-      display: block;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+  div .cta {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
   }
 
   a {
@@ -38,11 +38,12 @@ import { Icon } from "astro-icon";
     height: 4rem;
     justify-content: center;
     text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
     width: 100%;
   }
 
   a:hover {
-    filter: brightness(1.8);
+    background-color: var(--manaBlue);
   }
 
   .icon {
