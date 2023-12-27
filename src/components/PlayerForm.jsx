@@ -10,7 +10,12 @@ export function PlayerForm() {
 
   return (
     <div class="center">
-      <h4 class="center">What type of player are you?</h4>
+      <h4 class="center">
+        What type of player are you?
+        <Show when={playerType()}>
+          <h5 class="uppercase player-type">{playerType()}</h5>
+        </Show>
+      </h4>
       <Show
         when={playerType() === ""}
         fallback={
