@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon";
-import { Picture } from "astro:assets";
 import dashboard from "../assets/dashboard.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 import Card from "../components/Card.astro";
+import { PlayerForm } from "../components/PlayerForm";
 ---
 
 <Layout title="Nurl TTRPG">
@@ -12,8 +12,9 @@ import Card from "../components/Card.astro";
     <section>
       <h2>The app that super powers your game sessions.</h2>
       <p class="headline-support">
-        GM's and Players can finally deliver the best game experience possible
-        without sweating the "small stuff".
+        The table-top RPG app for enhancing IRL or hybrid game sessions by
+        combining the power of AI, extensions, and all the necessary tools into
+        one magical place.
       </p>
     </section>
     <EarlyAccessForm />
@@ -33,7 +34,8 @@ import Card from "../components/Card.astro";
       />
     </picture>
     <p>
-      Nurl is the table-top RPG app for enhancing IRL or hybrid game sessions.
+      Nurl helps you to keep your brain in the game with the extension
+      dashboard.
     </p>
   </section>
 
@@ -53,7 +55,7 @@ import Card from "../components/Card.astro";
       <div class="card-container">
         <Card
           title="Single Source of Truth"
-          body="We bring all the tools you need to run a game session into one place."
+          body="We bring all the tools you need to run (or play) a game session into one place."
           href="/"
         />
         <Card
@@ -68,6 +70,10 @@ import Card from "../components/Card.astro";
         />
       </div>
     </div>
+  </section>
+
+  <section>
+    <PlayerForm client:only />
   </section>
 
   <section class="section-developers">
@@ -96,7 +102,7 @@ import Card from "../components/Card.astro";
 
   <section>
     <div class="container">
-      <h3 class="center">Join the Anti-TPK TPK Social Club &trade;</h3>
+      <h3 class="center">The Anti-TPK TPK Social Club &trade;</h3>
       <EarlyAccessForm />
     </div>
   </section>
