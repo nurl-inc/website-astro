@@ -13,11 +13,16 @@ const socialLinks = [
     url: "https://instagram.com/nurl.app",
     icon: "instagram",
   },
-  // {
-  // 	name: 'Facebook',
-  // 	url: 'https://facebook.com/nurlttrpg',
-  // 	icon: 'facebook'
-  // },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/nurl",
+    icon: "facebook",
+  },
+  {
+    name: "Reddit",
+    url: "https://www.reddit.com/r/nurl/",
+    icon: "reddit",
+  },
   // {
   // 	name: 'YouTube',
   // 	url: 'https://youtube.com/nurlttrpg',
@@ -73,7 +78,7 @@ const socialLinks = [
 <style>
   footer {
     align-items: center;
-    background-color: var(--text);
+    background-color: var(--tpkBlack);
     color: var(--surface);
     display: flex;
     flex-direction: column;
@@ -115,9 +120,14 @@ const socialLinks = [
   }
 
   .social-link {
-    color: #ff2eff;
+    color: var(--oneUpPink);
     font-size: 1.5rem;
     width: 100%;
+  }
+
+  .social-link:hover,
+  .social-link:focus {
+    color: var(--sandboxGold);
   }
 
   .social-link {
