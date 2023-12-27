@@ -7,15 +7,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const surface = "#ffffff";
-const text = "#000000";
 
-const actionBg = "#0000ff";
-const dangerBg = "#e30000";
-const infoBg = "#00aeef";
-const warningBg = "#ffed00";
-
-// New
 const wizardWhite = "#ffffff";
 const tpkBlack = "#000000";
 
@@ -39,6 +31,20 @@ const n00bYellow = "#ffed00";
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Analytics -->
+    <script
+      async
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-4X0XVR93M0"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4X0XVR93M0");
+    </script>
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -103,13 +109,6 @@ const n00bYellow = "#ffed00";
 <style
   is:global
   define:vars={{
-    surface,
-    text,
-    actionBg,
-    dangerBg,
-    infoBg,
-    warningBg,
-    // new
     wizardWhite,
     tpkBlack,
     fourXBlue,
@@ -154,6 +153,30 @@ const n00bYellow = "#ffed00";
     font-weight: 900;
   }
 
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+
   body {
     min-height: 100vh;
   }
@@ -165,5 +188,53 @@ const n00bYellow = "#ffed00";
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .questionnaire,
+  .questionnaire-result {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: 80ch;
+  }
+
+  .questionnaire {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    background-color: var(--manaBlue);
+    border-radius: 2rem;
+    border: none;
+    color: var(--tpkBlack);
+    font-size: 1.125rem;
+    height: 3rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    transition: background-color 0.2s ease-in-out;
+    width: 50%;
+  }
+
+  .btn:hover {
+    background-color: var(--sandboxGold);
+  }
+
+  .questionnaire-result {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .player-type {
+    color: var(--n00bYellow);
+    margin-top: 1rem;
   }
 </style>
