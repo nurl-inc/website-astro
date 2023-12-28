@@ -13,7 +13,7 @@ export function PlayerForm() {
       <h4 class="center">
         What type of player are you?
         <Show when={playerType()}>
-          <h5 class="uppercase player-type">{playerType()}</h5>
+          <h3 class="uppercase player-type">{playerType()}</h3>
         </Show>
       </h4>
       <Show
