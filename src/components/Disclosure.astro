@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="disclosure">
+  <p>
+    We improve our products and advertising by using Microsoft Clarity to see
+    how you use our website. By using our site, you agree that we and Microsoft
+    can collect and use this data. <a href="/legal/privacy"
+      >Our privacy statement
+    </a> has more details.
+  </p>
+  <button id="accept-btn"> Close</button>
+</div>
+
+<script>
+  const btn = document.getElementById("accept-btn");
+  const disclosure = document.querySelector(".disclosure");
+
+  if (window.localStorage.getItem("clarity-agreed") === "true") {
+    disclosure?.classList.add("hidden");
+  }
+
+  btn?.addEventListener("click", () => {
+    const disclosure = document.querySelector(".disclosure");
+    disclosure?.classList.add("hidden");
+    window.localStorage.setItem("clarity-agreed", "true");
+  });
+</script>
+
+<style>
+  .disclosure {
+    background-color: var(--manaBlue);
+    color: var(--tpkBlack);
+    padding: 1rem;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 1rem;
+    max-width: 60ch;
+    left: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .disclosure button {
+    appearance: none;
+    background-color: transparent;
+    color: var(--tpkBlack);
+    border: 1px solid var(--tpkBlack);
+    border-radius: 6px;
+    box-shadow: 0px 0px 63px 0px rgba(0, 0, 0, 0.31);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition:
+      background-color,
+      color 0.2s ease-in-out;
+  }
+
+  .disclosure button:hover {
+    background-color: var(--tpkBlack);
+    color: var(--manaBlue);
+  }
+</style>

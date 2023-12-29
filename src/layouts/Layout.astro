@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Disclosure from "../components/Disclosure.astro";
 
 interface Props {
   title: string;
@@ -104,6 +105,8 @@ const n00bYellow = "#ffed00";
     <Header />
     <slot />
     <Footer />
+
+    <Disclosure />
   </body>
 </html>
 
