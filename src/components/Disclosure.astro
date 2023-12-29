@@ -2,8 +2,13 @@
 
 ---
 
-<div class="disclosure">
-  <p>
+<div
+  aria-describedby="dialog:text"
+  aria-label="Cookies disclosure"
+  role="dialog"
+  class="disclosure"
+>
+  <p id="dialog:text">
     We improve our products and advertising by using Microsoft Clarity to see
     how you use our website. By using our site, you agree that we and Microsoft
     can collect and use this data. <a href="/legal/privacy"
@@ -29,6 +34,10 @@
 </script>
 
 <style>
+  .hidden {
+    display: none;
+  }
+
   .disclosure {
     background-color: var(--manaBlue);
     color: var(--tpkBlack);
@@ -40,10 +49,6 @@
     left: 1rem;
     right: 1rem;
     z-index: 1000;
-  }
-
-  .hidden {
-    display: none;
   }
 
   .disclosure button {
@@ -66,5 +71,10 @@
   .disclosure button:hover {
     background-color: var(--tpkBlack);
     color: var(--manaBlue);
+  }
+
+  .disclosure a {
+    color: var(--tpkBlack);
+    text-decoration: underline;
   }
 </style>
