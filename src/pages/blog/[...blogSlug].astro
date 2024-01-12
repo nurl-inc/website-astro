@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 
 // 1. Get the slug from the incoming server request
 const { blogSlug } = Astro.params;
@@ -17,11 +18,14 @@ if (entry === undefined) {
 const { Content } = await entry.render();
 ---
 
-<Layout title={`Nurl | ${blogSlug}`}>
-  <div class="md-layout">
-    <Content />
-  </div>
-  <div>
+<MarkdownLayout title={`Nurl | ${blogSlug}`}>
+  <figure class="blog-feature">
+    <div></div>
+  </figure>
+
+  <Content />
+
+  <div class="md-conclusion">
     <p>
       The Nurl app was launched in 2023 to enhance IRL and hybrid sessions of
       tabletop role-playing games like <a href="https: dnd.wizards.com"
@@ -42,156 +46,21 @@ const { Content } = await entry.render();
       >.
     </p>
   </div>
-</Layout>
+</MarkdownLayout>
 
 <style>
-  .md-layout {
-    background-color: var(--wizardWhite);
-    color: var(--tpkBlack);
-    padding: 3rem;
+  .blog-feature {
+    display: none;
+    background-color: var(--manaBlue);
+    border-radius: 2rem;
+    height: 14rem;
+    margin-bottom: 2rem;
   }
 
-  .md-layout h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout h4 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout h5 {
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout h6 {
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout a {
-    color: var(--tpkBlue);
-    text-decoration: none;
-  }
-
-  .md-layout a:hover {
-    text-decoration: underline;
-  }
-
-  .md-layout ul {
-    list-style: disc;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout ol {
-    list-style: decimal;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .md-layout li {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-
-  .md-layout blockquote {
-    border-left: 0.25rem solid var(--fourXBlue);
-    margin-left: 0;
-    padding-left: 1rem;
-  }
-
-  .md-layout pre {
-    background-color: var(--wizardWhite);
-    color: var(--tpkBlack);
-    font-size: 0.875rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    padding: 1rem;
-  }
-
-  .md-layout code {
-    background-color: var(--wizardWhite);
-    color: var(--tpkBlack);
-    font-size: 0.875rem;
-    font-weight: 400;
-    padding: 0.25rem;
-  }
-
-  .md-layout hr {
-    border: 0;
-    border-top: 1px solid var(--tpkBlack);
-    margin-bottom: 1rem;
-  }
-
-  .md-layout table {
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-
-  .md-layout table th {
-    border-bottom: 1px solid var(--tpkBlack);
-    font-size: 0.875rem;
-    font-weight: 700;
-    padding: 0.5rem;
-    text-align: left;
-  }
-
-  .md-layout table td {
-    border-bottom: 1px solid var(--tpkBlack);
-    font-size: 0.875rem;
-    font-weight: 400;
-    padding: 0.5rem;
-  }
-
-  .md-layout table tr:last-child td {
-    border-bottom: 0;
-  }
-
-  .md-layout table tr:nth-child(even) {
-    background-color: var(--wizardWhite);
-  }
-
-  .md-layout table tr:nth-child(odd) {
-    background-color: var(--wizardWhite);
-  }
-
-  .md-layout table tr:hover {
-    background-color: var(--wizardWhite);
-  }
-
-  .md-layout table tr:nth-child(even):hover {
-    background-color: var(--wizardWhite);
-  }
-
-  .md-layout table tr:nth-child(odd):hover {
-    background-color: var(--wizardWhite);
-  }
-
-  .md-layout table tr:last-child td {
-    border-bottom: 0;
-  }
-
-  .md-layout table tr:last-child td:first-child {
-    border-bottom-left-radius: 0.25rem;
+  .md-conclusion {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    margin-top: 2rem;
+    max-width: 88ch;
   }
 </style>
