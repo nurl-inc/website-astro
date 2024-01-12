@@ -3,12 +3,12 @@ import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 // 1. Get the slug from the incoming server request
-const { slug } = Astro.params;
-if (slug === undefined) {
-  throw new Error("Slug is required");
+const { blogSlug } = Astro.params;
+if (blogSlug === undefined) {
+  throw new Error("blogSlug is required");
 }
-// 2. Query for the entry directly using the request slug
-const entry = await getEntry("blog", slug);
+// 2. Query for the entry directly using the request blogSlug
+const entry = await getEntry("blog", blogSlug);
 // 3. Redirect if the entry does not exist
 if (entry === undefined) {
   return Astro.redirect("/404");
@@ -17,9 +17,30 @@ if (entry === undefined) {
 const { Content } = await entry.render();
 ---
 
-<Layout title={`Nurl | ${slug}`}>
+<Layout title={`Nurl | ${blogSlug}`}>
   <div class="md-layout">
     <Content />
+  </div>
+  <div>
+    <p>
+      The Nurl app was launched in 2023 to enhance IRL and hybrid sessions of
+      tabletop role-playing games like <a href="https: dnd.wizards.com"
+        >Dungeons & Dragons &copy;</a
+      > and <a href="https://paizo.com/pathfinder">Pathfinder &copy;</a> by
+      combining AI, extensions, and all your necessary tools into one online
+      dashboard so you can level up your enjoyment of the game while powering
+      down the chaos.
+    </p>
+    <p>
+      To stay connected with Nurl, visit our <a href="https://nurl.website"
+        >website</a
+      > or follow on <a href="https://www.facebook.com/NurlApp">Facebook</a>, <a
+        href="https://www.instagram.com/nurl.app">Instagram</a
+      >, <a href="https://twitter.com/NurlApp">X</a>, <a
+        href="https://www.linkedin.com/company/nurl/"></a>, and <a
+        href="https://www.twitch.tv/nurl_app">Twitch</a
+      >.
+    </p>
   </div>
 </Layout>
 
