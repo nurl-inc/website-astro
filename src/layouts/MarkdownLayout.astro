@@ -13,7 +13,10 @@ const { title } = Astro.props;
   .md-layout {
     background-color: var(--wizardWhite);
     color: var(--tpkBlack);
-    padding: 1rem;
+    padding-top: 4rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-bottom: 4rem;
   }
 
   .md-layout article {
@@ -88,9 +91,15 @@ const { title } = Astro.props;
   }
 
   .md-layout blockquote {
-    border-left: 0.25rem solid var(--fourXBlue);
+    background-color: hsla(196, 100%, 47%, 0.2);
+    border-left: 0.25rem solid var(--manaBlue);
+    border-radius: 6px;
+    margin-bottom: 1rem;
     margin-left: 0;
-    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   .md-layout pre {
