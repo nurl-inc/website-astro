@@ -8,19 +8,48 @@ const { title } = Astro.props;
     <h1>Articles</h1>
     <nav>
       <ul class="blog-grid">
-        <li><a href="/blog/feature-focus-nuro">Feature Focus: Nuro™</a></li>
         <li>
-          <a href="/blog/og-ttrpg-turns-50"
-            >Original TTRPG Game Turns 50 in 2024</a
-          >
+          <a href="/blog/feature-focus-nuro">
+            Feature Focus: Nuro&trade;
+            <time datetime="2024-01-10">Jan 10, 2024</time>
+          </a>
         </li>
-        <li><a href="/blog/january-features">January Features</a></li>
         <li>
-          <a href="/blog/january-bugs-rehomed">January Bugs are Rehomed</a>
+          <a href="/blog/og-ttrpg-turns-50">
+            Original TTRPG Game Turns 50 in 2024
+            <time datetime="2024-01-08">Jan 8, 2024</time>
+          </a>
         </li>
-        <li><a href="/blog/nurl-rewards-program">Nurl Rewards Program</a></li>
-        <li><a href="/blog/nurl-now-on-twitch">Nurl Now on Twitch</a></li>
-        <li><a href="/blog/beta-goes-global">Beta Goes Global</a></li>
+        <li>
+          <a href="/blog/january-features">
+            January Features
+            <time datetime="2024-01-05">Jan 5, 2024</time>
+          </a>
+        </li>
+        <li>
+          <a href="/blog/january-bugs-rehomed">
+            January Bugs are Rehomed
+            <time datetime="2024-01-03">Jan 3, 2024</time>
+          </a>
+        </li>
+        <li>
+          <a href="/blog/nurl-rewards-program">
+            Nurl Rewards Program
+            <time datetime="2024-01-02">Jan 2, 2024</time>
+          </a>
+        </li>
+        <li>
+          <a href="/blog/nurl-now-on-twitch">
+            Nurl Now on Twitch
+            <time datetime="2023-12-28">Dec 28, 2023</time>
+          </a>
+        </li>
+        <li>
+          <a href="/blog/beta-goes-global">
+            Beta Goes Global
+            <time datetime="2023-12-23">Dec 23, 2023</time>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -53,6 +82,11 @@ const { title } = Astro.props;
   nav ul li {
     height: 14rem;
     width: 100%;
+    transition: scale 200ms ease-in-out;
+  }
+
+  nav ul li:hover {
+    scale: 1.05;
   }
 
   nav ul li a {
@@ -62,12 +96,20 @@ const { title } = Astro.props;
     color: var(--tpkBlack);
     display: flex;
     flex-direction: column;
-    font-size: xx-large;
+    font-size: 1.5rem;
+    font-weight: 600;
     height: 100%;
     justify-content: center;
     padding: 1rem;
     text-decoration: none;
     width: 100%;
+  }
+
+  nav ul li a time {
+    color: var(--tpkBlack);
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
   }
 
   nav ul li a:hover {
