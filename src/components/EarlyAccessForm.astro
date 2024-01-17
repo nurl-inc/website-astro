@@ -1,9 +1,10 @@
 ---
 import { Icon } from "astro-icon";
+const { showHeadline } = Astro.props;
 ---
 
 <div>
-  <p class="cta">Join the beta app</p>
+  {showHeadline && <p class="cta">Join the beta app</p>}
   <a
     data-tag="beta:cta"
     href="https://beta.nurl.app"

@@ -9,15 +9,19 @@ import { PlayerForm } from "../components/PlayerForm";
 
 <Layout title="Nurl TTRPG">
   <main class="container">
-    <section>
+    <section class="feature-section">
       <h2>The app that super powers your game sessions.</h2>
       <p class="headline-support">
-        The table-top RPG app for enhancing IRL or hybrid game sessions by
-        combining the power of AI, extensions, and all the necessary tools into
-        one magical place.
+        Players across the world rely on Nurl for their IRL or hybrid game
+        sessions.
       </p>
+      <EarlyAccessForm />
+      <small>
+        Nurl is an app that enhances IRL/hybrid games sessions by combining the
+        power of AI, extensions, and all the tools you need to run or play a
+        game into one magical place - <em class="underline">not a VTT</em>.
+      </small>
     </section>
-    <EarlyAccessForm />
   </main>
 
   <section class="dashboard-wrapper">
@@ -143,6 +147,24 @@ import { PlayerForm } from "../components/PlayerForm";
     margin-bottom: 2rem;
   }
 
+  .feature-section {
+    padding-bottom: 0;
+  }
+  .feature-section p {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .feature-section small {
+    display: block;
+    padding-top: 2rem;
+    max-width: 60ch;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
   .headline-support {
     font-size: 1.5rem;
   }
@@ -227,6 +249,17 @@ import { PlayerForm } from "../components/PlayerForm";
   }
 
   @media (min-width: 768px) {
+    .feature-section h2 {
+      font-size: 3.5rem;
+    }
+    .feature-section p {
+      font-size: 1.75rem;
+      padding-bottom: 3rem;
+    }
+    .feature-section small {
+      font-size: 1rem;
+    }
+
     section {
       padding-bottom: 6rem;
       padding-top: 6rem;
