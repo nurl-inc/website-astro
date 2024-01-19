@@ -188,7 +188,7 @@ import Note from "../components/Note.astro";
     <PlayerForm client:only />
   </section>
 
-  <section class="section-developers">
+  <section class="section-spotlight section-developers hide">
     <div class="container">
       <h3>We <3 Developers</h3>
       <p class="headline-support">Built by developers for developers.</p>
@@ -212,9 +212,10 @@ import Note from "../components/Note.astro";
     </div>
   </section>
 
-  <section>
+  <section class="section-spotlight final-cta">
     <div class="container">
-      <h3 class="center">The Anti-TPK TPK Social Club &trade;</h3>
+      <h3 class="center">Don't be the reason your game sessions get TPK'd</h3>
+      <h4 class="center">Join the Anti-TPK TPK Social Club&trade;</h4>
       <EarlyAccessForm />
     </div>
   </section>
@@ -281,6 +282,14 @@ import Note from "../components/Note.astro";
     gap: 2rem;
     margin: 0 auto;
     padding-top: 2rem;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .center {
+    text-align: center;
   }
 
   .container {
@@ -361,10 +370,6 @@ import Note from "../components/Note.astro";
     margin-top: 1rem;
   }
 
-  .underline {
-    text-decoration: underline;
-  }
-
   .headline-support {
     font-size: 1.5rem;
   }
@@ -401,35 +406,17 @@ import Note from "../components/Note.astro";
     width: 33%;
   }
 
-  .dev-btn {
-    align-items: center;
-    border-radius: 0.5rem;
-    border: 1px solid var(--sandboxGold);
-    color: var(--wizardWhite);
-    display: inline-flex;
-    font-size: 1.125rem;
-    gap: 0.5rem;
-    height: 3rem;
-    justify-content: center;
-    text-decoration: none;
-    transition:
-      background-color,
-      color 0.2s ease-in-out;
-    width: 100%;
+  .final-cta {
+    border-bottom: none !important;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
-
-  .dev-btn:hover {
-    background-color: var(--sandboxGold);
-    color: var(--tpkBlack);
+  .final-cta h3 {
+    color: var(--n00bYellow) !important;
   }
-
-  .dev-btn .icon {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-
-  .center {
-    text-align: center;
+  .final-cta h4 {
+    color: var(--wizardWhite) !important;
+    margin-bottom: 2rem;
   }
 
   @media (min-width: 768px) {
@@ -509,12 +496,16 @@ import Note from "../components/Note.astro";
       font-size: 2.5rem;
     }
 
-    .dev-btn {
-      margin-top: 2rem;
-      height: 4rem;
-      padding-inline-start: 2rem;
-      padding-inline-end: 2rem;
-      width: auto;
+    .final-cta {
+      padding-bottom: 7rem !important;
+      padding-top: 7rem !important;
+    }
+    .final-cta h3 {
+      margin-bottom: 4rem;
+    }
+    .final-cta h4 {
+      color: var(--wizardWhite) !important;
+      margin-bottom: 2rem;
     }
   }
 </style>
