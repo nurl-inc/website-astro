@@ -8,6 +8,7 @@ import VampireLogo from "../assets/logos/vampire.svg";
 import SummarizeNote from "../assets/summarize.webp";
 import GMNotes from "../assets/gm-notes.webp";
 import GroupNote from "../assets/group-notes.webp";
+import Dashboard from "../assets/dashboard.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 import Card from "../components/Card.astro";
@@ -130,6 +131,22 @@ import Note from "../components/Note.astro";
     </ul>
   </section>
 
+  <section class="section-spotlight section-intuitive">
+    <div>
+      <h3>Intuitive and Functional</h3>
+      <p>Our group dashboard helps you to keep your brain in the game.</p>
+    </div>
+    <picture>
+      <img
+        {...Dashboard}
+        alt="Nurl dashboard"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+    <small>All the tools you need powered by AI in one magical place.</small>
+  </section>
+
   <section>
     <PlayerForm client:only />
   </section>
@@ -208,6 +225,27 @@ import Note from "../components/Note.astro";
     width: 100%;
   }
 
+  section[class*="section-spotlight"] {
+    border-bottom: 1px dashed var(--manaBlue);
+  }
+  section[class*="section-spotlight"] h3 {
+    color: var(--fourXBlue);
+  }
+  section[class*="section-spotlight"] p {
+    font-size: 1;
+    margin-bottom: 1rem;
+  }
+  section[class*="section-spotlight"] strong {
+    font-weight: 700;
+  }
+  section[class*="section-spotlight"] ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+
   .container {
     margin: 0 auto;
     max-width: 80ch;
@@ -269,25 +307,21 @@ import Note from "../components/Note.astro";
     padding-top: 2rem;
   }
 
-  section[class*="section-spotlight"] {
-    border-bottom: 1px dashed var(--manaBlue);
+  .section-intuitive {
+    background-color: var(--tpkBlack);
+    border-bottom: none !important;
   }
-  section[class*="section-spotlight"] h3 {
-    color: var(--fourXBlue);
+  .section-intuitive h3 {
+    color: var(--manaBlue) !important;
   }
-  section[class*="section-spotlight"] p {
-    font-size: 1;
-    margin-bottom: 1rem;
+  .section-intuitive picture {
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    overflow: hidden;
   }
-  section[class*="section-spotlight"] strong {
-    font-weight: 700;
-  }
-  section[class*="section-spotlight"] ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 0 auto;
-    padding-top: 2rem;
+  .section-intuitive small {
+    display: block;
+    margin-top: 1rem;
   }
 
   .underline {
@@ -359,21 +393,6 @@ import Note from "../components/Note.astro";
   }
 
   @media (min-width: 768px) {
-    .feature-section h2 {
-      font-size: 3.5rem;
-    }
-    .feature-section p {
-      font-size: 1.75rem;
-      padding-bottom: 3rem;
-    }
-    .feature-section small {
-      font-size: 1rem;
-    }
-
-    .section-logos ul {
-      gap: 2rem;
-    }
-
     section[class*="section-spotlight"] {
       padding-bottom: 7rem;
       padding-top: 5rem;
@@ -407,6 +426,35 @@ import Note from "../components/Note.astro";
 
     h2 {
       font-size: 3rem;
+    }
+
+    .feature-section h2 {
+      font-size: 3.5rem;
+    }
+    .feature-section p {
+      font-size: 1.75rem;
+      padding-bottom: 3rem;
+    }
+    .feature-section small {
+      font-size: 1rem;
+    }
+
+    .section-logos ul {
+      gap: 2rem;
+    }
+
+    .section-intuitive picture {
+      margin: 4rem auto;
+      max-width: 90%;
+    }
+    .section-intuitive img {
+      max-width: 100%;
+    }
+    .section-intuitive small {
+      font-size: 1.3rem;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
     }
 
     .headline-support {
