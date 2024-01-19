@@ -74,37 +74,32 @@ import { PlayerForm } from "../components/PlayerForm";
     </ul>
   </section>
 
-  <section class="section-change-play">
-    <div class="container">
-      <h3>Nurl will change how you play the game.</h3>
-      <p class="headline-support">
-        Creativity and strategy are the most important parts of any game
-        session.
-      </p>
+  <section class="section-spotlight-nuro">
+    <div>
+      <h3>Gain advantage with Nuro&trade;</h3>
       <p>
-        With so many things to keep track of, it's easy to get distracted and
-        lose focus. Nurl helps you stay focused on the game by taking care of
-        the "small stuff".
+        Nurl is powered by our proprietary AI, <strong>Nuro&trade;</strong>, to
+        help you run and play games like never before.
       </p>
-
-      <ul class="card-container">
-        <Card
-          title="Single Source of Truth"
-          body="We bring all the tools you need to run (or play) a game session into one place."
-          href="/"
-        />
-        <Card
-          title="AI Powered"
-          body="We use AI and automation to make your game sessions more immersive and engaging than ever before."
-          href="/"
-        />
-        <Card
-          title="Extension Library"
-          body="We create a dashboard for you to install and use extensions to help streamline your sessions."
-          href="/"
-        />
-      </ul>
     </div>
+
+    <ul class="card-container">
+      <Card
+        question="Help me plan my next game session."
+        response="Of course! What game system and edition are you using?"
+        description="Get help planning your next session or one-shot."
+      />
+      <Card
+        question="Help me level up my character"
+        response="Absolutely! At level 4 you gain some powerful abilities."
+        description="Learn your best options when leveling up."
+      />
+      <Card
+        question="It's my first time playing dnd. Help!"
+        response="Of course! I'd be happy to help you get started."
+        description="Remove onboarding anxiety with new players."
+      />
+    </ul>
   </section>
 
   <section>
@@ -238,6 +233,30 @@ import { PlayerForm } from "../components/PlayerForm";
     max-width: 7ch;
   }
 
+  .section-spotlight-nuro {
+    background-color: var(--wizardWhite);
+    color: var(--tpkBlack);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  .section-spotlight-nuro h3 {
+    color: var(--fourXBlue);
+  }
+  .section-spotlight-nuro p {
+    font-size: 1;
+    margin-bottom: 1rem;
+  }
+  .section-spotlight-nuro strong {
+    font-weight: 700;
+  }
+  .section-spotlight-nuro ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+
   .underline {
     text-decoration: underline;
   }
@@ -320,6 +339,28 @@ import { PlayerForm } from "../components/PlayerForm";
 
     .section-logos ul {
       gap: 2rem;
+    }
+
+    .section-spotlight-nuro {
+      padding-bottom: 7rem;
+      padding-top: 5rem;
+    }
+    .section-spotlight-nuro div {
+      padding-inline-start: 4rem;
+      max-width: 88ch;
+    }
+    .section-spotlight-nuro h3 {
+      font-size: 3rem;
+    }
+    .section-spotlight-nuro p {
+      font-size: 1.5;
+    }
+    .section-spotlight-nuro ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding-top: 6rem;
     }
 
     section {

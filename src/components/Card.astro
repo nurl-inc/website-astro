@@ -1,57 +1,79 @@
 ---
 interface Props {
-  title: string;
-  body: string;
-  href: string;
+  question: string;
+  response: string;
+  description: string;
 }
 
-const { href, title, body } = Astro.props;
+const { question, response, description } = Astro.props;
 ---
 
-<li class="link-card">
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
+<li class="nuro-card-container">
+  <div class="nuro-card">
+    <div>
+      <span>nuro</span>
+      <p>Greetings, traveler! how can I assist you today?</p>
+    </div>
+    <div>
+      <span class="me">me</span>
+      <p>{question}</p>
+    </div>
+    <div>
+      <span>nuro</span>
+      <p>{response}</p>
+    </div>
+  </div>
+  <small>{description}</small>
 </li>
+
 <style>
-  .link-card {
-    list-style: none;
+  .nuro-card-container {
     display: flex;
-    padding: 1px;
-    background-color: var(--tpkBlack);
-    border-radius: 7px;
-    background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
-  .link-card > a {
-    color: var(--sandboxGold);
-    width: 100%;
-    text-decoration: none;
-    line-height: 1.4;
-    padding: calc(1.5rem - 1px);
-    border-radius: 8px;
+
+  .nuro-card {
+    border-radius: 0.5rem;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    height: 15rem;
+    overflow: hidden;
   }
-  h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  .nuro-card div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
+    padding-top: 1.5rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-bottom: 1.5rem;
   }
-  p {
-    color: var(--wizardWhite);
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+  .nuro-card div:last-child {
+    border-bottom: none;
   }
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
-    background-image: var(--accent-gradient);
+
+  .nuro-card span {
+    display: inline-block;
+    background-color: var(--manaBlue);
+    border-radius: 0.2rem;
+    color: var(--tpkBlack);
+    font-weight: bold;
+    height: 1.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    text-transform: uppercase;
   }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent-light));
+  .nuro-card span.me {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  @media screen and (min-width: 768px) {
+    .nuro-card {
+      width: 32.5rem;
+    }
   }
 </style>
