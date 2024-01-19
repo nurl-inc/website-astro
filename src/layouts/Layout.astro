@@ -237,34 +237,52 @@ const n00bYellow = "#ffed00";
 
   .questionnaire {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
   }
 
   .btn {
-    background-color: var(--manaBlue);
-    border-radius: 2rem;
+    background-color: var(--tpkBlack);
+    border-radius: 3rem;
     border: none;
-    color: var(--tpkBlack);
-    font-size: 1.125rem;
-    height: 3rem;
+    color: var(--wizardWhite);
+    font-size: 1.5rem;
+    height: 5rem;
     padding-inline-start: 2rem;
     padding-inline-end: 2rem;
     transition: background-color 0.2s ease-in-out;
-    width: 50%;
+    width: 100%;
   }
 
   .btn:hover {
-    background-color: var(--sandboxGold);
+    background-color: var(--fourXBlue);
   }
 
   .questionnaire-result {
+    color: var(--tpkBlack);
     margin-top: 2rem;
     font-size: 1.2rem;
   }
 
   .player-type {
-    color: var(--n00bYellow);
+    color: var(--fourXBlue);
     margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .player-form-headline {
+      font-size: 2.5rem !important;
+    }
+    .questionnaire {
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: space-between;
+      margin-top: 4rem;
+    }
+
+    .questionnaire-result {
+      font-size: 1.5rem;
+    }
   }
 </style>
