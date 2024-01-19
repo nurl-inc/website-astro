@@ -10,12 +10,13 @@ export function PlayerForm() {
 
   return (
     <div class="center">
-      <h3 class="center">
+      <h3 class="center player-form-headline" style="color: var(--fourXBlue);">
         What type of player are you?
         <Show when={playerType()}>
           <h4 class="uppercase player-type">{playerType()}</h4>
         </Show>
       </h3>
+
       <Show
         when={playerType() === ""}
         fallback={
@@ -27,34 +28,35 @@ export function PlayerForm() {
                   You have enough to worry about, let Nurl help with the rest.
                   <br />
                   <br />
-                  We give you the tools to create and manage your groups, chat,
-                  take private and public notes, and use tools from the
+                  We give you the tools to create and manage your groups, take
+                  private and public notes, chat, and use tools from the
                   extension marketplace to enhance your game experience.
-                  <br />
-                  <br />
-                  We even use AI to enhance those tools and make them more
-                  useful.
                 </>
               }
             >
               Now you can focus on your character and telling their story.
               <br />
               <br />
-              We give you (and your group) a place to chat, take public notes,
-              and use tools from the extension marketplace to enhance your game
+              We give you (and your group) take public notes, chat, and use
+              tools from the extension marketplace to enhance your game
               experience.
-              <br />
-              <br />
-              We even use AI to enhance those tools and make them more useful.
             </Show>
+            <br />
+            <br />
+            Everything is powered by our proprietary AI engine Nuro&trade; to
+            enhance your entire experience.
           </p>
         }
       >
         <div class="questionnaire">
-          <button class="btn" value="player" onClick={handleSubmit}>
+          <button
+            class="btn player-form-btn"
+            value="player"
+            onClick={handleSubmit}
+          >
             Player
           </button>
-          <button class="btn" value="gm" onClick={handleSubmit}>
+          <button class="btn player-form-btn" value="gm" onClick={handleSubmit}>
             GM
           </button>
         </div>
