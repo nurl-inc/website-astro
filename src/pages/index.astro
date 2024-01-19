@@ -1,6 +1,10 @@
 ---
 import { Icon } from "astro-icon";
-import dashboard from "../assets/dashboard.webp";
+import DndLogo from "../assets/logos/dnd.svg";
+import PathfinderLogo from "../assets/logos/pathfinder.svg";
+import ShadowrunLogo from "../assets/logos/shadowrun.svg";
+import CriticalRoleLogo from "../assets/logos/critical-role.svg";
+import VampireLogo from "../assets/logos/vampire.svg";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 import Card from "../components/Card.astro";
@@ -24,22 +28,50 @@ import { PlayerForm } from "../components/PlayerForm";
     </section>
   </main>
 
-  <section class="dashboard-wrapper">
-    <picture>
-      <source srcset={dashboard.src} type="image/webp" />
-      <img
-        src={dashboard.src}
-        alt="Nurl Dashboard"
-        loading="lazy"
-        decoding="async"
-        width="1243"
-        height="870"
-      />
-    </picture>
-    <p>
-      Nurl helps you to keep your brain in the game with the extension
-      dashboard.
-    </p>
+  <section class="section-logos">
+    <p>If it's a TTRPG - we support it</p>
+    <ul>
+      <li class="dnd">
+        <img
+          {...DndLogo}
+          alt="Dungeons & Dragons"
+          loading="lazy"
+          decoding="async"
+        />
+      </li>
+      <li class="pathfinder">
+        <img
+          {...PathfinderLogo}
+          alt="Pathfinder"
+          loading="lazy"
+          decoding="async"
+        />
+      </li>
+      <li class="vampire">
+        <img
+          {...VampireLogo}
+          alt="Vampire: The Masquerade"
+          loading="lazy"
+          decoding="async"
+        />
+      </li>
+      <li class="shadowrun">
+        <img
+          {...ShadowrunLogo}
+          alt="Shadowrun"
+          loading="lazy"
+          decoding="async"
+        />
+      </li>
+      <li class="critical-role">
+        <img
+          {...CriticalRoleLogo}
+          alt="Critical Role"
+          loading="lazy"
+          decoding="async"
+        />
+      </li>
+    </ul>
   </section>
 
   <section class="section-change-play">
@@ -120,15 +152,6 @@ import { PlayerForm } from "../components/PlayerForm";
     padding-bottom: 4rem;
   }
 
-  main section {
-    padding-top: 1rem;
-  }
-
-  .container {
-    margin: 0 auto;
-    max-width: 80ch;
-  }
-
   section {
     padding-bottom: 2rem;
     padding-inline-start: 1rem;
@@ -147,36 +170,10 @@ import { PlayerForm } from "../components/PlayerForm";
     margin-bottom: 2rem;
   }
 
-  .feature-section {
-    padding-bottom: 0;
-  }
-  .feature-section p {
-    font-size: 1.5rem;
-    padding-bottom: 2rem;
-  }
-
-  .feature-section small {
-    display: block;
-    padding-top: 2rem;
-    max-width: 60ch;
-  }
-
-  .underline {
-    text-decoration: underline;
-  }
-
-  .headline-support {
-    font-size: 1.5rem;
-  }
-
-  :is(.section-developers, .dashboard-wrapper) {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .dashboard-wrapper {
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
+  h3 {
+    color: var(--n00bYellow);
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
   picture,
@@ -188,15 +185,76 @@ import { PlayerForm } from "../components/PlayerForm";
     width: 100%;
   }
 
+  .container {
+    margin: 0 auto;
+    max-width: 80ch;
+  }
+
+  .feature-section {
+    padding-bottom: 0;
+    padding-top: 3rem;
+  }
+  .feature-section p {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  .feature-section small {
+    display: block;
+    padding-top: 2rem;
+    max-width: 60ch;
+  }
+
+  .section-logos {
+    background-color: var(--oneUpPink);
+    color: var(--tpkBlack);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .section-logos ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 80ch;
+  }
+  .section-logos li {
+    flex: 1 1 100%;
+    max-width: 23ch;
+  }
+  .section-logos li.pathfinder {
+    max-width: 15ch;
+  }
+  .section-logos li.vampire {
+    max-width: 15ch;
+  }
+  .section-logos li.shadowrun {
+    max-width: 5ch;
+  }
+  .section-logos li.critical-role {
+    max-width: 7ch;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .headline-support {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-wrapper {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+
   .dashboard-wrapper > p {
     font-size: 1.125rem;
     margin-top: 2rem;
-  }
-
-  h3 {
-    color: var(--n00bYellow);
-    font-size: 2rem;
-    margin-bottom: 2rem;
   }
 
   .section-change-play {
@@ -258,6 +316,10 @@ import { PlayerForm } from "../components/PlayerForm";
     }
     .feature-section small {
       font-size: 1rem;
+    }
+
+    .section-logos ul {
+      gap: 2rem;
     }
 
     section {
