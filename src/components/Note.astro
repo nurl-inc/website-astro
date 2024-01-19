@@ -1,0 +1,41 @@
+---
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  imgProps: ImageMetadata;
+  alt: string;
+  description: string;
+}
+
+const { alt, imgProps, description } = Astro.props;
+---
+
+<li class="nurl-note-container">
+  <div class="nurl-note">
+    <img {...imgProps} alt={alt} loading="lazy" decoding="async" />
+  </div>
+  <small>{description}</small>
+</li>
+
+<style>
+  .nurl-note-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nurl-note {
+    border: 1px solid var(--tpkBlack);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 768px) {
+    .nurl-note {
+      width: 32.5rem;
+    }
+  }
+</style>
