@@ -5,10 +5,14 @@ import PathfinderLogo from "../assets/logos/pathfinder.svg";
 import ShadowrunLogo from "../assets/logos/shadowrun.svg";
 import CriticalRoleLogo from "../assets/logos/critical-role.svg";
 import VampireLogo from "../assets/logos/vampire.svg";
+import SummarizeNote from "../assets/summarize.webp";
+import GMNotes from "../assets/gm-notes.webp";
+import GroupNote from "../assets/group-notes.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 import Card from "../components/Card.astro";
 import { PlayerForm } from "../components/PlayerForm";
+import Note from "../components/Note.astro";
 ---
 
 <Layout title="Nurl TTRPG">
@@ -98,6 +102,30 @@ import { PlayerForm } from "../components/PlayerForm";
         question="It's my first time playing dnd. Help!"
         response="Of course! I'd be happy to help you get started."
         description="Remove onboarding anxiety with new players."
+      />
+    </ul>
+  </section>
+
+  <section class="section-spotlight-notes">
+    <div>
+      <h3>Super-powered Notes</h3>
+      <p>Let AI and Markdown empower your scribes.</p>
+    </div>
+    <ul class="card-container">
+      <Note
+        imgProps={SummarizeNote}
+        alt="Summarize note preview"
+        description="Summarize notes when your party is in the moment."
+      />
+      <Note
+        imgProps={GMNotes}
+        alt="Private note preview"
+        description="Private notes for GMs."
+      />
+      <Note
+        imgProps={GroupNote}
+        alt="Public note preview"
+        description="Public notes for the entire group."
       />
     </ul>
   </section>
@@ -233,23 +261,28 @@ import { PlayerForm } from "../components/PlayerForm";
     max-width: 7ch;
   }
 
-  .section-spotlight-nuro {
+  .section-spotlight-nuro,
+  .section-spotlight-notes {
     background-color: var(--wizardWhite);
     color: var(--tpkBlack);
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
-  .section-spotlight-nuro h3 {
+
+  section[class*="section-spotlight"] {
+    border-bottom: 1px dashed var(--manaBlue);
+  }
+  section[class*="section-spotlight"] h3 {
     color: var(--fourXBlue);
   }
-  .section-spotlight-nuro p {
+  section[class*="section-spotlight"] p {
     font-size: 1;
     margin-bottom: 1rem;
   }
-  .section-spotlight-nuro strong {
+  section[class*="section-spotlight"] strong {
     font-weight: 700;
   }
-  .section-spotlight-nuro ul {
+  section[class*="section-spotlight"] ul {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -341,21 +374,21 @@ import { PlayerForm } from "../components/PlayerForm";
       gap: 2rem;
     }
 
-    .section-spotlight-nuro {
+    section[class*="section-spotlight"] {
       padding-bottom: 7rem;
       padding-top: 5rem;
     }
-    .section-spotlight-nuro div {
+    section[class*="section-spotlight"] div {
       padding-inline-start: 4rem;
       max-width: 88ch;
     }
-    .section-spotlight-nuro h3 {
+    section[class*="section-spotlight"] h3 {
       font-size: 3rem;
     }
-    .section-spotlight-nuro p {
+    section[class*="section-spotlight"] p {
       font-size: 1.5;
     }
-    .section-spotlight-nuro ul {
+    section[class*="section-spotlight"] ul {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
