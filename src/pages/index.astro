@@ -14,6 +14,7 @@ import EarlyAccessForm from "../components/EarlyAccessForm.astro";
 import Card from "../components/Card.astro";
 import { PlayerForm } from "../components/PlayerForm";
 import Note from "../components/Note.astro";
+import CustomerQuote from "../components/CustomerQuote.astro";
 ---
 
 <Layout title="Nurl TTRPG">
@@ -74,6 +75,20 @@ import Note from "../components/Note.astro";
           alt="Critical Role"
           loading="lazy"
           decoding="async"
+        />
+      </li>
+    </ul>
+  </section>
+
+  <section class="section-customer-quotes">
+    <ul>
+      <li>
+        <CustomerQuote
+          quote="As a new player, the Nuro™ AI feature has been especially helpful in guiding me through building out my character and leveling up!"
+          author="Stephanie"
+          player="Player"
+          tag="dnd"
+          years="2"
         />
       </li>
     </ul>
@@ -343,6 +358,24 @@ import Note from "../components/Note.astro";
   }
   .section-logos li.critical-role {
     max-width: 7ch;
+  }
+
+  .section-customer-quotes {
+    background-color: var(--tpkBlack);
+    color: var(--wizardWhite);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  .section-customer-quotes ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    list-style: none;
   }
 
   .section-spotlight-nuro,

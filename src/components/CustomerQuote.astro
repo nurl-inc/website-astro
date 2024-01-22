@@ -1,0 +1,64 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  player: string;
+  tag: string;
+  years: string;
+}
+
+const { quote, author, player, tag, years } = Astro.props;
+---
+
+<div class="customer-quote">
+  <blockquote>"{quote}"</blockquote>
+  <cite>{author}</cite>
+  <p>{player} {years} years</p>
+  <span>{tag}</span>
+</div>
+
+<style>
+  .customer-quote {
+    background-color: var(--wizardWhite);
+    border-radius: 0.5rem;
+    color: var(--tpkBlack);
+    padding: 1rem;
+    max-width: 66ch;
+  }
+
+  .customer-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .customer-quote cite {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .customer-quote span {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 0.3rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .customer-quote small {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .customer-quote {
+      padding: 2rem;
+    }
+  }
+</style>
