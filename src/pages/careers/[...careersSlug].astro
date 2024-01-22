@@ -3,12 +3,12 @@ import { getEntry } from "astro:content";
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 
 // 1. Get the slug from the incoming server request
-const { blogSlug } = Astro.params;
-if (blogSlug === undefined) {
-  throw new Error("blogSlug is required");
+const { careersSlug } = Astro.params;
+if (careersSlug === undefined) {
+  throw new Error("careersSlug is required");
 }
-// 2. Query for the entry directly using the request blogSlug
-const entry = await getEntry("blog", blogSlug);
+// 2. Query for the entry directly using the request careersSlug
+const entry = await getEntry("careers", careersSlug);
 // 3. Redirect if the entry does not exist
 if (entry === undefined) {
   return Astro.redirect("/404");
@@ -17,7 +17,7 @@ if (entry === undefined) {
 const { Content } = await entry.render();
 ---
 
-<MarkdownLayout title={`Nurl | ${blogSlug}`}>
+<MarkdownLayout title={`Nurl | ${careersSlug}`}>
   <figure class="blog-feature">
     <div></div>
   </figure>
@@ -25,6 +25,7 @@ const { Content } = await entry.render();
   <Content />
 
   <div class="md-conclusion">
+    <p>---</p>
     <p>
       The Nurl app was launched in 2023 to enhance IRL and hybrid sessions of
       tabletop role-playing games like <a href="https: dnd.wizards.com"
