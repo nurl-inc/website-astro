@@ -72,23 +72,42 @@ const socialLinks = [
     </section>
 
     <section class="sitemap">
-      <h3>Company</h3>
-      <ul class="sitemap-link-list">
-        <li>
-          <a class="sitemap-link" href="/">Home</a>
-        </li>
-        <li>
-          <a class="sitemap-link" href="/blog">Blog</a>
-        </li>
-        <li>
-          <a
-            class="sitemap-link"
-            href="https://developers.nurl.app"
-            target="_blank"
-            rel="noopener noreferrer">Developers</a
-          >
-        </li>
-      </ul>
+      <div>
+        <h3>Company</h3>
+        <ul class="sitemap-link-list">
+          <li>
+            <a class="sitemap-link" href="/">Home</a>
+          </li>
+          <li>
+            <a class="sitemap-link" href="/blog">Blog</a>
+          </li>
+          <li>
+            <a class="sitemap-link" href="/careers">Careers</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Product</h3>
+        <ul class="sitemap-link-list">
+          <li>
+            <a
+              class="sitemap-link"
+              href="https://beta.nurl.app"
+              target="_blank"
+              rel="noopener noreferrer">Sign up</a
+            >
+          </li>
+          <li>
+            <a
+              class="sitemap-link"
+              href="https://developers.nurl.app"
+              target="_blank"
+              rel="noopener noreferrer">Developers</a
+            >
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
 
@@ -260,9 +279,15 @@ const socialLinks = [
       width: 8.75rem;
     }
 
-    .social-section,
-    .sitemap {
+    .social-section {
       margin: initial;
+    }
+
+    .sitemap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 50ch;
     }
   }
 </style>
