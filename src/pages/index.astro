@@ -87,8 +87,17 @@ import CustomerQuote from "../components/CustomerQuote.astro";
           quote="As a new player, the Nuro™ AI feature has been especially helpful in guiding me through building out my character and leveling up!"
           author="Stephanie"
           player="Player"
-          tag="dnd"
+          tag="D&D"
           years="2"
+        />
+      </li>
+      <li>
+        <CustomerQuote
+          quote="Just having a place to keep group specific chat and collaborative campaign notes has been supremely useful."
+          author="Andy"
+          player="Player"
+          tag="TTRPG"
+          years="20"
         />
       </li>
     </ul>
@@ -501,6 +510,10 @@ import CustomerQuote from "../components/CustomerQuote.astro";
 
     .section-logos ul {
       gap: 2rem;
+    }
+
+    .section-customer-quotes ul {
+      flex-direction: row;
     }
 
     .section-intuitive picture {
