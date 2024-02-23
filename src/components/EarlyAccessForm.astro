@@ -1,24 +1,80 @@
 ---
-import { Icon } from "astro-icon";
-const { showHeadline } = Astro.props;
+import { Resend } from "resend";
+
+const resend = new Resend(import.meta.env.RESEND_KEY);
+const errors = { email: "" };
+
+const isValidEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    );
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const gotcha = formData.get("gotcha");
+    const email = formData.get("email") as string;
+
+    if (gotcha) {
+      errors.email += "You gon' get you spam bot!";
+    }
+
+    if (typeof email !== "string" || !isValidEmail(email)) {
+      errors.email += "Email is not valid. ";
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: "Nurl <noreply@nurl.app>",
+      to: [email, "admin@nurl.app"],
+      subject: "You're on the list! 🚀",
+      html: "<h1>Thanks for joining the waiting list!</h1><p>We'll let you know when we're ready to launch.</p><p>In the meantime, follow us on <a href='https://twitter.com/nurlapp'>Twitter</a> for updates (or any other social platform - choose your destiny).</p><p>-- <br> Nurl Team</p>",
+    });
+
+    if (error) {
+      errors.email += "There was an error sending the email. ";
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <div>
-  {showHeadline && <p class="cta">Join the beta app</p>}
-  <a
-    data-tag="beta:cta"
-    href="https://beta.nurl.app"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Sign up, it's free!
-    <Icon aria-hidden class="icon" pack="mdi" name="external-link" />
-  </a>
+  <form action="/thanks" autocomplete="off" method="POST">
+    <label class="gotcha" for="gotcha">
+      <input id="gotcha" name="gotcha" style="display: none" type="text" />
+    </label>
+
+    {errors.email && <p>{errors.email}</p>}
+    <label for="email" class="cta">Join the waiting list</label>
+    <div class="input-wrapper">
+      <input
+        autocomplete="false"
+        aria-describedby="email:help"
+        class="control"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email manually"
+        required
+      />
+    </div>
+    <small id="email:help" style="display:block; margin-bottom: 1.5rem">
+      We'll let you know when we're ready to launch. No spam, we promise.
+    </small>
+    <button class="early-btn" type="submit" class="cta">Let's do this!</button>
+  </form>
 </div>
 
 <style>
   div {
     text-align: center;
+    margin-top: 2rem;
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
     width: 100%;
@@ -26,12 +82,29 @@ const { showHeadline } = Astro.props;
 
   div .cta {
     display: block;
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
 
-  a {
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .control {
+    border: 1px solid var(--n00bYellow);
+    border-radius: 1.3rem;
+    background-color: var(--wizardWhite);
+    font-size: 1.2rem;
+    height: 4rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    width: 100%;
+  }
+
+  .early-btn {
     align-items: center;
     border: none;
     background-color: var(--n00bYellow);
@@ -63,7 +136,7 @@ const { showHeadline } = Astro.props;
       padding-inline-end: 2rem;
     }
 
-    a {
+    .early-btn {
       padding-inline-start: 4rem;
       padding-inline-end: 4rem;
       width: auto;

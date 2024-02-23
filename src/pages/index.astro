@@ -20,17 +20,12 @@ import CustomerQuote from "../components/CustomerQuote.astro";
 <Layout title="Nurl TTRPG">
   <main class="container">
     <section class="feature-section">
-      <h2>The app that super powers your game sessions.</h2>
+      <h1>We make tabletop roleplay games easy.</h1>
       <p class="headline-support">
-        Players across the world rely on Nurl for their IRL or hybrid game
-        sessions.
+        Nurl uses propietary AI to deconstruct the rules, manage characters, and
+        anything else you need to create the best playing experience.
       </p>
       <EarlyAccessForm />
-      <small>
-        Nurl is an app that enhances IRL/hybrid games sessions by combining the
-        power of AI, extensions, and all the tools you need to run or play a
-        game into one magical place - <em class="underline">not a VTT</em>.
-      </small>
     </section>
   </main>
 
@@ -103,6 +98,22 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     </ul>
   </section>
 
+  <section class="section-spotlight section-intuitive">
+    <div>
+      <h3>Intuitive and Functional</h3>
+      <p>Our group dashboard helps you to keep your brain in the game.</p>
+    </div>
+    <picture>
+      <img
+        {...Dashboard}
+        alt="Nurl dashboard"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+    <small>All the tools you need powered by AI in one magical place.</small>
+  </section>
+
   <section class="section-spotlight-nuro">
     <div>
       <h3>Gain advantage with Nuro&trade;</h3>
@@ -153,22 +164,6 @@ import CustomerQuote from "../components/CustomerQuote.astro";
         description="Public notes for the entire group."
       />
     </ul>
-  </section>
-
-  <section class="section-spotlight section-intuitive">
-    <div>
-      <h3>Intuitive and Functional</h3>
-      <p>Our group dashboard helps you to keep your brain in the game.</p>
-    </div>
-    <picture>
-      <img
-        {...Dashboard}
-        alt="Nurl dashboard"
-        loading="lazy"
-        decoding="async"
-      />
-    </picture>
-    <small>All the tools you need powered by AI in one magical place.</small>
   </section>
 
   <section class="section spotlight section-player-form">
@@ -238,8 +233,8 @@ import CustomerQuote from "../components/CustomerQuote.astro";
 
   <section class="section-spotlight final-cta">
     <div class="container">
-      <h3 class="center">Don't be the reason your game sessions get TPK'd</h3>
-      <h4 class="center">Join the Anti-TPK TPK Social Club&trade;</h4>
+      <h3 class="center">Tabletop games shouldn't make your brain hurt</h3>
+      <h4 class="center">Let Nurl make your game fun again.</h4>
       <EarlyAccessForm />
     </div>
   </section>
@@ -252,6 +247,10 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 4rem;
+  }
+
+  main p {
+    font-size: 1.3rem !important;
   }
 
   section {
@@ -267,6 +266,11 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     margin-bottom: 1.5rem;
   }
 
+  h1 {
+    color: var(--n00bYellow);
+  }
+
+  h1,
   h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -413,7 +417,7 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   }
 
   .headline-support {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .dashboard-wrapper {
@@ -462,6 +466,14 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   }
 
   @media (min-width: 768px) {
+    main {
+      text-align: center;
+      max-width: 120ch !important;
+    }
+
+    main p {
+      font-size: 1.5rem !important;
+    }
     section[class*="section-spotlight"] {
       padding-bottom: 7rem;
       padding-top: 5rem;
@@ -491,6 +503,10 @@ import CustomerQuote from "../components/CustomerQuote.astro";
 
     section p {
       font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
     }
 
     h2 {
