@@ -5,7 +5,6 @@ export const config = { path: "/success" };
 export default async function joinWaitList(req) {
   const formData = await req.formData();
   const email = formData.get("email");
-  console.log(`Email: ${formData}`);
   const resendKey = Netlify.env.get("RESEND_KEY");
   const resend = new Resend(resendKey);
   try {
