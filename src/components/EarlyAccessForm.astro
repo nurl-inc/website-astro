@@ -1,7 +1,4 @@
 ---
-import { Resend } from "resend";
-
-const resend = new Resend(import.meta.env.RESEND_KEY);
 const errors = { email: "" };
 
 const isValidEmail = (email: string) => {
@@ -25,17 +22,6 @@ if (Astro.request.method === "POST") {
     if (typeof email !== "string" || !isValidEmail(email)) {
       errors.email += "Email is not valid. ";
     }
-
-    const { data, error } = await resend.emails.send({
-      from: "Nurl <noreply@nurl.app>",
-      to: [email, "admin@nurl.app"],
-      subject: "You're on the list! 🚀",
-      html: "<h1>Thanks for joining the waiting list!</h1><p>We'll let you know when we're ready to launch.</p><p>In the meantime, follow us on <a href='https://twitter.com/nurlapp'>Twitter</a> for updates (or any other social platform - choose your destiny).</p><p>-- <br> Nurl Team</p>",
-    });
-
-    if (error) {
-      errors.email += "There was an error sending the email. ";
-    }
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -45,10 +31,19 @@ if (Astro.request.method === "POST") {
 ---
 
 <div>
-  <form action="/thanks" autocomplete="off" method="POST">
-    <label class="gotcha" for="gotcha">
-      <input id="gotcha" name="gotcha" style="display: none" type="text" />
-    </label>
+  <form
+    netlify
+    netlify-honeypot
+    action="/success"
+    autocomplete="off"
+    method="POST"
+  >
+    <p class="hidden" style="display:none">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
+    <input type="hidden" name="form-name" value="waitlist" />
 
     {errors.email && <p>{errors.email}</p>}
     <label for="email" class="cta">Join the waiting list</label>
