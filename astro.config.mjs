@@ -3,12 +3,13 @@ import netlify from "@astrojs/netlify/functions";
 import markdoc from "@astrojs/markdoc";
 import partytown from "@astrojs/partytown";
 import solidJs from "@astrojs/solid-js";
-
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
   output: "server",
   site: "https://nurl.website",
 
