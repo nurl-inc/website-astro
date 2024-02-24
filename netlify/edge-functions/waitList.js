@@ -2,9 +2,10 @@ import { Resend } from "resend";
 
 export const config = { path: "/success" };
 
-export default async function joinWaitList(req) {
-  console.log("Joining wait list", req);
-  const resend = new Resend(Netlify.env.RESEND_KEY);
+export default async function joinWaitList() {
+  const resendKey = Netlify.env.get("RESEND_KEY");
+  console.log("Resend Key: ", resendKey);
+  const resend = new Resend(resendKey);
   try {
     const { error } = await resend.emails.send({
       from: "Nurl <noreply@nurl.app>",
