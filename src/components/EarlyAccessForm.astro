@@ -12,7 +12,7 @@ const isValidEmail = (email: string) => {
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
-    const gotcha = formData.get("gotcha");
+    const gotcha = formData.get("bot-field");
     const email = formData.get("email") as string;
 
     if (gotcha) {
@@ -40,7 +40,11 @@ if (Astro.request.method === "POST") {
   >
     <p class="hidden" style="display:none">
       <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
+        Don’t fill this out if you’re human: <input
+          autocomplete="false"
+          name="bot-field"
+          type="text"
+        />
       </label>
     </p>
     <input type="hidden" name="form-name" value="waitlist" />
