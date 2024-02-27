@@ -21,9 +21,6 @@ export default async function joinWaitList(req, context) {
       const url = new URL("/thanks", req.url);
       return Response.redirect(url, 302);
     }
-    return new Response("You're already on the list!", {
-      status: 400,
-    });
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
