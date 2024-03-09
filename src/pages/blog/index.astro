@@ -19,16 +19,18 @@ function getFormattedDate(date: string) {
     <nav>
       <ul class="blog-grid">
         {
-          allBlogPosts.map((post) => (
-            <li>
-              <a href={`/blog/${post.data.slug}`}>
-                {post.data.title}
-                <time datetime={post.data.date}>
-                  {getFormattedDate(post.data.date)}
-                </time>
-              </a>
-            </li>
-          ))
+          allBlogPosts
+            .map((post) => (
+              <li>
+                <a href={`/blog/${post.data.slug}`}>
+                  {post.data.title}
+                  <time datetime={post.data.date}>
+                    {getFormattedDate(post.data.date)}
+                  </time>
+                </a>
+              </li>
+            ))
+            .reverse()
         }
       </ul>
     </nav>
