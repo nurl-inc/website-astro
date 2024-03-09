@@ -7,5 +7,5 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["markdoc", "partytown"]
+  "cSpell.words": ["automagically", "markdoc", "partytown"]
 }
