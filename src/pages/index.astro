@@ -7,7 +7,7 @@ import CriticalRoleLogo from "../assets/logos/critical-role.svg";
 import VampireLogo from "../assets/logos/vampire.svg";
 import SummarizeNote from "../assets/summarize.webp";
 import GMNotes from "../assets/gm-notes.webp";
-import GroupNote from "../assets/group-notes.webp";
+import CharacterTracking from "../assets/character-tracking.webp";
 import Dashboard from "../assets/dashboard.webp";
 import Layout from "../layouts/Layout.astro";
 import EarlyAccessForm from "../components/EarlyAccessForm.astro";
@@ -22,8 +22,9 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     <section class="feature-section">
       <h1>We make tabletop roleplay games easy.</h1>
       <p class="headline-support">
-        Nurl uses propietary AI to deconstruct the rules, manage characters, and
-        anything else you need to create the best playing experience.
+        Nurl uses propietary advanced algorithms to deconstruct the rules,
+        manage characters, and anything else you need to create the best playing
+        experience.
       </p>
       <EarlyAccessForm />
     </section>
@@ -101,7 +102,9 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   <section class="section-spotlight section-intuitive">
     <div>
       <h3>Intuitive and Functional</h3>
-      <p>Our group dashboard helps you to keep your brain in the game.</p>
+      <p>
+        Our realtime group dashboard helps you to keep your brain in the game.
+      </p>
     </div>
     <picture>
       <img
@@ -111,15 +114,17 @@ import CustomerQuote from "../components/CustomerQuote.astro";
         decoding="async"
       />
     </picture>
-    <small>All the tools you need powered by AI in one magical place.</small>
+    <small
+      >All the tools you need powered by Nuro&trade; in one magical place.</small
+    >
   </section>
 
   <section class="section-spotlight-nuro">
     <div>
       <h3>Gain advantage with Nuro&trade;</h3>
       <p>
-        Nurl is powered by our proprietary AI, <strong>Nuro&trade;</strong>, to
-        help you run and play games like never before.
+        Nurl is powered by our proprietary engine, <strong>Nuro&trade;</strong>,
+        to help you run and play games like never before.
       </p>
     </div>
 
@@ -145,23 +150,24 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   <section class="section-spotlight-notes">
     <div>
       <h3>Super-powered Notes</h3>
-      <p>Let AI and Markdown empower your scribes.</p>
+      <p>Let Nuro&trade; empower notes like never before.</p>
     </div>
     <ul class="card-container">
       <Note
         imgProps={SummarizeNote}
         alt="Summarize note preview"
-        description="Summarize notes when your party is in the moment."
+        description="Summarize notes when you need to catch up."
       />
       <Note
         imgProps={GMNotes}
-        alt="Private note preview"
-        description="Private notes for GMs."
+        alt="Location based tracking preview"
+        description="Location based tracking that works alongside our widgets."
       />
       <Note
-        imgProps={GroupNote}
-        alt="Public note preview"
-        description="Public notes for the entire group."
+        imgProps={{ ...CharacterTracking }}
+        alt="Automagically created character dictionaries."
+        description="Automagically created character dictionaries. Literally, one click opt-in."
+        style="scale: 0.7;left: -163px;position: absolute;object-fit: scale-down;top: -17rem;"
       />
     </ul>
   </section>
@@ -234,7 +240,7 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   <section class="section-spotlight final-cta">
     <div class="container">
       <h3 class="center">Tabletop games shouldn't make your brain hurt</h3>
-      <h4 class="center">Let Nurl make your game fun again.</h4>
+      <h4 class="center">Let Nurl make the game fun again.</h4>
       <EarlyAccessForm />
     </div>
   </section>
