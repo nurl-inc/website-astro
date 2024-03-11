@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.3.1
     version: 0.3.1(prettier-plugin-astro@0.12.2)(prettier@3.1.1)(typescript@5.3.3)
   '@astrojs/markdoc':
-    specifier: ^0.8.0
-    version: 0.8.0(astro@4.0.3)(react@18.2.0)
+    specifier: ^0.9.1
+    version: 0.9.1(astro@4.0.3)(react@18.2.0)
   '@astrojs/netlify':
     specifier: ^5.1.2
     version: 5.1.2(astro@4.0.3)
@@ -139,8 +139,8 @@ packages:
       - typescript
     dev: false
 
-  /@astrojs/markdoc@0.8.0(astro@4.0.3)(react@18.2.0):
-    resolution: {integrity: sha512-y2oMDoInwVcykf2RTwlrB6KSf5H5PVnrRIu7wvxO52mFgwj5v5UPv82RyLYLx3BNPlj+aIlgG+c6SUsSP8M9fQ==}
+  /@astrojs/markdoc@0.9.1(astro@4.0.3)(react@18.2.0):
+    resolution: {integrity: sha512-NYv6dy471Yyvyj85e7KeyC6K9iQwtKd2AxPypx4IvDamnVGn/S4wT2i57HSifxLUsLdRdaHIeoj7bV2YRmZNwA==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
@@ -149,12 +149,11 @@ packages:
       '@astrojs/prism': 3.0.0
       '@markdoc/markdoc': 0.3.5(react@18.2.0)
       astro: 4.0.3(typescript@5.3.3)
-      esbuild: 0.19.8
+      esbuild: 0.19.12
       github-slugger: 2.0.0
       gray-matter: 4.0.3
       htmlparser2: 9.0.0
       kleur: 4.1.5
-      shikiji: 0.6.13
       zod: 3.22.4
     transitivePeerDependencies:
       - '@types/react'
