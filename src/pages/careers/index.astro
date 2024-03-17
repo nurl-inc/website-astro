@@ -1,5 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+
+const allJobsOpen = await getCollection("careers");
 ---
 
 <Layout title="Nurl Careers">
@@ -7,19 +10,23 @@ import Layout from "../../layouts/Layout.astro";
     <main>
       <h1>Work at Nurl</h1>
       <p>
-        Nurl is home to passionate people that believe in our mission to advance
-        the IRL/hybrid gaming experience for the tabletop roleplaying game
-        community.
+        Nurl is home to passionate people that believe in our mission to make
+        playing tabletop role-play games easy and fun. We are always looking for
+        talented individuals to join our team and help us build a better
+        tabletop role-play gaming experience.
       </p>
     </main>
     <nav>
       <ul class="blog-grid">
-        <li>
-          <a href="/careers/cto"> Chief Technology Officer</a>
-        </li>
-        <li>
-          <a href="/careers/cpo"> Chief Product Officer</a>
-        </li>
+        {
+          allJobsOpen
+            .map((post) => (
+              <li>
+                <a href={`/careers/${post.data.slug}`}>{post.data.title}</a>
+              </li>
+            ))
+            .reverse()
+        }
       </ul>
     </nav>
   </div>
