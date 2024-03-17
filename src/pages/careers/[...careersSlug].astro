@@ -22,7 +22,7 @@ const { Content } = await entry.render();
     <div></div>
   </figure>
 
-  <Content />
+  <Content frontmatter={entry.data} />
 
   <div class="md-conclusion">
     <p>---</p>
@@ -30,10 +30,9 @@ const { Content } = await entry.render();
       The Nurl app was launched in 2023 to enhance IRL and hybrid sessions of
       tabletop role-playing games like <a href="https: dnd.wizards.com"
         >Dungeons & Dragons &copy;</a
-      > and <a href="https://paizo.com/pathfinder">Pathfinder &copy;</a> by
-      combining AI, extensions, and all your necessary tools into one online
-      dashboard so you can level up your enjoyment of the game while powering
-      down the chaos.
+      > and <a href="https://paizo.com/pathfinder">Pathfinder &copy;</a> by combining
+      AI, extensions, and all your necessary tools into one online dashboard so you
+      can level up your enjoyment of the game while powering down the chaos.
     </p>
     <p>
       To stay connected with Nurl, visit our <a href="https://nurl.website"
