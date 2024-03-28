@@ -22,9 +22,8 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     <section class="feature-section">
       <h1>We make tabletop roleplay games easy.</h1>
       <p class="headline-support">
-        Nurl uses propietary advanced algorithms to deconstruct the rules,
-        manage characters, and anything else you need to create the best playing
-        experience.
+        Nurl deconstructs everything that makes learning, running, or playing
+        TTRPGs hard so you can focus on the fun.
       </p>
       <EarlyAccessForm />
     </section>
@@ -80,7 +79,7 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     <ul>
       <li>
         <CustomerQuote
-          quote="As a new player, the Nuro™ AI feature has been especially helpful in guiding me through building out my character and leveling up!"
+          quote="As a new player, Nurl has been especially helpful in guiding me through building out my character and leveling up. It even makes spells easy!"
           author="Stephanie"
           player="Player"
           tag="D&D"
@@ -103,7 +102,8 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     <div>
       <h3>Intuitive and Functional</h3>
       <p>
-        Our realtime group dashboard helps you to keep your brain in the game.
+        Our realtime group dashboard helps you get all the information you need
+        wtihout causing your brain to "crit fail".
       </p>
     </div>
     <picture>
@@ -114,17 +114,15 @@ import CustomerQuote from "../components/CustomerQuote.astro";
         decoding="async"
       />
     </picture>
-    <small
-      >All the tools you need powered by Nuro&trade; in one magical place.</small
-    >
+    <small>All the tools you need in one magical place.</small>
   </section>
 
   <section class="section-spotlight-nuro">
     <div>
-      <h3>Gain advantage with Nuro&trade;</h3>
+      <h3>Gain advantage with Nurl</h3>
       <p>
-        Nurl is powered by our proprietary engine, <strong>Nuro&trade;</strong>,
-        to help you run and play games like never before.
+        Nurl is powered by our advanced engine, to help you run and play games
+        like never before.
       </p>
     </div>
 
@@ -132,15 +130,15 @@ import CustomerQuote from "../components/CustomerQuote.astro";
       <Card
         question="Help me plan my next game session."
         response="Of course! What game system and edition are you using?"
-        description="Get help planning your next session or one-shot."
+        description="Get help planning your next session, campaign, or one-shot."
       />
       <Card
-        question="Can you help me understand the rules of spells?"
-        response="Absolutely! Spells are complex, so I'll help simplify them so you can take advantage of every option!"
+        question="How do I use the Ice Knife spell?"
+        response="Oh, the Ice Knife! What a chilling way to attack your enemies (literally). Let me help you with that."
         description="Get help with rules and mechanics."
       />
       <Card
-        question="Create a summary of tonight's game session."
+        question="Summarize tonight's session."
         response="Of course! I'd be happy to help with that."
         description="Get automated game summaries."
       />
@@ -150,7 +148,7 @@ import CustomerQuote from "../components/CustomerQuote.astro";
   <section class="section-spotlight-notes">
     <div>
       <h3>Super-powered Notes</h3>
-      <p>Let Nuro&trade; empower notes like never before.</p>
+      <p>Nurl empowers your group notes like never before.</p>
     </div>
     <ul class="card-container">
       <Note
@@ -161,12 +159,12 @@ import CustomerQuote from "../components/CustomerQuote.astro";
       <Note
         imgProps={GMNotes}
         alt="Location based tracking preview"
-        description="Location based tracking that works alongside our widgets."
+        description="Location based tracking that works alongside your widgets."
       />
       <Note
         imgProps={{ ...CharacterTracking }}
         alt="Automagically created character dictionaries."
-        description="Automagically created character dictionaries. Literally, one click opt-in."
+        description="Automagically created character dictionaries in one click."
         style="scale: 0.7;left: -163px;position: absolute;object-fit: scale-down;top: -17rem;"
       />
     </ul>
@@ -239,8 +237,7 @@ import CustomerQuote from "../components/CustomerQuote.astro";
 
   <section class="section-spotlight final-cta">
     <div class="container">
-      <h3 class="center">Tabletop games shouldn't make your brain hurt</h3>
-      <h4 class="center">Let Nurl make the game fun again.</h4>
+      <h3 class="center">Get the app that all Tabletop games deserve.</h3>
       <EarlyAccessForm />
     </div>
   </section>
@@ -525,6 +522,8 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     .feature-section p {
       font-size: 1.75rem;
       padding-bottom: 3rem;
+      margin: 0 auto;
+      max-width: 60ch;
     }
     .feature-section small {
       font-size: 1rem;
