@@ -28,23 +28,26 @@ export function PlayerForm() {
                   You have enough to worry about, let Nurl help with the rest.
                   <br />
                   <br />
-                  We give you the tools to create and manage your groups, take
-                  private and public notes, chat, and use tools from the
-                  extension marketplace to enhance your game experience.
+                  We give you all the tools you need to easily plan and run game
+                  sessions with super-charged features like never before. Nurl
+                  is a hub for your group that includes enhanced notes, chat,
+                  realtime dashboards, and more.
+                  <br />
+                  <br />
+                  Now you can focus on telling the story and not answer the
+                  question "Where are we again?".
                 </>
               }
             >
-              Now you can focus on your character and telling their story.
+              We give you all the tools you need to easily learn and play a game
+              that is supercharged with enhanced features so your entire party
+              can also have a place right along side you. Gone are the days of
+              overly complex character sheets and notes.
               <br />
               <br />
-              We give you (and your group) take public notes, chat, and use
-              tools from the extension marketplace to enhance your game
-              experience.
+              Now you can focus on telling <em>their</em> story and not figuring
+              out how to cast a spell.
             </Show>
-            <br />
-            <br />
-            Everything is powered by our proprietary AI engine Nuro&trade; to
-            enhance your entire experience.
           </p>
         }
       >
