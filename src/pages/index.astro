@@ -1,5 +1,11 @@
 ---
-import { Icon } from "astro-icon";
+import Layout from "../layouts/Layout.astro";
+import EarlyAccessForm from "../components/EarlyAccessForm.astro";
+import Card from "../components/Card.astro";
+import { PlayerForm } from "../components/PlayerForm";
+import Note from "../components/Note.astro";
+import CustomerQuote from "../components/CustomerQuote.astro";
+
 import DndLogo from "../assets/logos/dnd.svg";
 import PathfinderLogo from "../assets/logos/pathfinder.svg";
 import ShadowrunLogo from "../assets/logos/shadowrun.svg";
@@ -9,12 +15,9 @@ import SummarizeNote from "../assets/summarize.webp";
 import GMNotes from "../assets/gm-notes.webp";
 import CharacterTracking from "../assets/character-tracking.webp";
 import Dashboard from "../assets/dashboard.webp";
-import Layout from "../layouts/Layout.astro";
-import EarlyAccessForm from "../components/EarlyAccessForm.astro";
-import Card from "../components/Card.astro";
-import { PlayerForm } from "../components/PlayerForm";
-import Note from "../components/Note.astro";
-import CustomerQuote from "../components/CustomerQuote.astro";
+import Timer from "../assets/mgc/timer.webp";
+import GroupData from "../assets/mgc/group-data.webp";
+import PushNotify from "../assets/mgc/push-notify.webp";
 ---
 
 <Layout title="Nurl TTRPG">
@@ -170,6 +173,33 @@ import CustomerQuote from "../components/CustomerQuote.astro";
     </ul>
   </section>
 
+  <section class="section-spotlight-notes">
+    <div>
+      <h3>Mutli-group Campaigns</h3>
+      <p>Nurl helps your Epic's to actually be "epic".</p>
+    </div>
+    <ul class="card-container">
+      <Note
+        imgProps={Timer}
+        alt="Timer widget preview"
+        description="Timer widget to keep everyone on track."
+        style="scale: 0.7;left: -135px;position: absolute;object-fit: scale-down;top: -5rem;"
+      />
+      <Note
+        imgProps={GroupData}
+        alt="Group data preview"
+        description="A easy way to keep track of your groups."
+        style="scale: 0.6;left: -14rem;position: absolute;object-fit: scale-down;top: -6.5rem;"
+      />
+      <Note
+        imgProps={PushNotify}
+        alt="Push notification preview"
+        description="Push notifications to keep everyone in the loop."
+        style="scale: 0.7;left: -135px;position: absolute;object-fit: scale-down;top: -5rem;"
+      />
+    </ul>
+  </section>
+
   <section class="section spotlight section-player-form">
     <div class="section-player-form_dice">
       <svg
@@ -209,30 +239,6 @@ import CustomerQuote from "../components/CustomerQuote.astro";
       </svg>
     </div>
     <PlayerForm client:only />
-  </section>
-
-  <section class="section-spotlight section-developers hide">
-    <div class="container">
-      <h3>We <3 Developers</h3>
-      <p class="headline-support">Built by developers for developers.</p>
-      <p>
-        We're building a platform for developers to create extensions that
-        integrate with Nurl.
-      </p>
-      <p>
-        Create, publish, and sell your extensions to the Nurl community. We'll
-        handle the rest.
-      </p>
-
-      <a class="dev-btn" href="https://developers.nurl.app">
-        Visit developers.nurl.app <Icon
-          aria-hidden
-          pack="mdi"
-          name="external-link"
-          class="icon"
-        />
-      </a>
-    </div>
   </section>
 
   <section class="section-spotlight final-cta">
