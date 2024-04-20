@@ -92,8 +92,10 @@ const n00bYellow = "#ffed00";
 
     <!-- X tags -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@nurl_inc" />
+    <meta property="twitter:domain" content="nurl.website" />
+    <meta property="twitter:url" content="https://nurl.website" />
     <meta name="twitter:title" content={title} />
+    <meta name="twitter:site" content="@nurl_inc" />
     <meta
       name="twitter:description"
       content="See why everyone loves Nurl at https://nurl.website today."
@@ -102,16 +104,15 @@ const n00bYellow = "#ffed00";
     <meta name="twitter:image:alt" content="Nurl logo" />
 
     <!-- OG tags -->
+    <meta property="og:url" content="https://nurl.website" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
       content="See why everyone loves Nurl at https://nurl.website today."
     />
     <meta property="og:image" content="https://nurl.website/og-meta.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nurl.website" />
     <meta property="og:site_name" content="Nurl" />
-    <meta property="og:locale" content="en_US" />
 
     <title>{title}</title>
   </head>
