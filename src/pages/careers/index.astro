@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 const allJobsOpen = await getCollection("careers");
 ---
 
-<Layout title="Nurl Careers">
+<Layout title="Nurl careers page">
   <div class="blog-container">
     <main>
       <h1>Work at Nurl</h1>
@@ -22,7 +22,7 @@ const allJobsOpen = await getCollection("careers");
           allJobsOpen
             .map((post) => (
               <li>
-                <a href={`/careers/${post.data.slug}`}>{post.data.title}</a>
+                <a href={`/careers/${post.data.slug}/`}>{post.data.title}</a>
               </li>
             ))
             .reverse()
