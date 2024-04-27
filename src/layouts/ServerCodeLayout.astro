@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const { title, status, heading, description } = Astro.props;
+---
+
+<Layout title={title}>
+  <main class="page">
+    <h1>{status}</h1>
+    <h2>{heading}</h2>
+    <p>{description}</p>
+
+    <button class="button" onclick="window.history.back()">Go Back</button>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80ch;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+    color: var(--n00bYellow);
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .button {
+    align-items: center;
+    border: none;
+    background-color: var(--n00bYellow);
+    border-radius: 2rem;
+    display: inline-flex;
+    color: var(--tpkBlack);
+    font-size: 1.2rem;
+    font-weight: bold;
+    gap: 0.5rem;
+    height: 4rem;
+    justify-content: center;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    min-width: 15rem;
+    width: auto;
+  }
+  .button:hover {
+    background-color: var(--manaBlue);
+  }
+</style>
