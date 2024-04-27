@@ -27,7 +27,7 @@
     "@react-email/render": "^0.0.12",
     "@types/gtag.js": "^0.0.18",
     "autoprefixer": "^10.4.19",
-    "cssnano": "^6.1.0",
+    "cssnano": "^7.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
   }
