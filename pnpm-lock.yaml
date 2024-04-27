@@ -24,8 +24,8 @@ dependencies:
     specifier: ^4.0.1
     version: 4.0.1(solid-js@1.8.16)(vite@5.2.10)
   '@netlify/edge-functions':
-    specifier: ^2.3.1
-    version: 2.3.1
+    specifier: ^2.5.1
+    version: 2.5.1
   astro:
     specifier: ^4.0.3
     version: 4.0.3(typescript@5.4.5)
@@ -1475,8 +1475,8 @@ packages:
       '@types/markdown-it': 12.2.3
     dev: false
 
-  /@netlify/edge-functions@2.3.1:
-    resolution: {integrity: sha512-3sJzP1DmzMZppkAZpUixdHA4ryiKD1NSpLMRViYStE9Oe10rZPSnM8yl6A90vTBqCYvbAF5S7W9oPf2ucrCCIQ==}
+  /@netlify/edge-functions@2.5.1:
+    resolution: {integrity: sha512-6YGlbzxPaSqc/D2LhP4T4PXrim/vRmqpO1RwQKqVod6WCWlkdtJcAd3mGoI7efrjfND8twh7TqXtL7RRCI23qA==}
     dev: false
 
   /@netlify/functions@2.6.0:
