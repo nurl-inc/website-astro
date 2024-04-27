@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import NurlBreadcrumbs from "../../components/NurlBreadcrumbs.astro";
 
 // 1. Get the slug from the incoming server request
 const { careersSlug } = Astro.params;
@@ -17,7 +18,9 @@ if (entry === undefined) {
 const { Content } = await entry.render();
 ---
 
-<MarkdownLayout title={`Nurl | ${careersSlug}`}>
+<MarkdownLayout title={careersSlug}>
+  <NurlBreadcrumbs />
+
   <figure class="blog-feature">
     <div></div>
   </figure>
