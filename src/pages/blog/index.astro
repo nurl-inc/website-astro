@@ -13,7 +13,7 @@ function getFormattedDate(date: string) {
 }
 ---
 
-<Layout title="Nurl Blog">
+<Layout title="Nurl blog articles">
   <div class="blog-container">
     <h1>Articles</h1>
     <nav>
@@ -22,7 +22,7 @@ function getFormattedDate(date: string) {
           allBlogPosts
             .map((post) => (
               <li>
-                <a href={`/blog/${post.data.slug}`}>
+                <a href={`/blog/${post.data.slug}/`}>
                   {post.data.title}
                   <time datetime={post.data.date}>
                     {getFormattedDate(post.data.date)}

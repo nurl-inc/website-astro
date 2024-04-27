@@ -11,7 +11,7 @@ if (blogSlug === undefined) {
 const entry = await getEntry("blog", blogSlug);
 // 3. Redirect if the entry does not exist
 if (entry === undefined) {
-  return Astro.redirect("/404");
+  return Astro.redirect("/404/");
 }
 // 4. (Optional) Render the entry to HTML in the template
 const { Content } = await entry.render();
@@ -28,10 +28,10 @@ const { Content } = await entry.render();
     <p>
       The Nurl app was launched in 2023 to make playing tabletop role-playing
       games like <a href="https: dnd.wizards.com">Dungeons & Dragons &copy;</a>
-       and <a href="https://paizo.com/pathfinder">Pathfinder &copy;</a> easy by
-      combining advanced algorithms, extensions, and all your necessary tools
-      into one online dashboard so you can level up your enjoyment of the game
-      while powering down the chaos.
+      and <a href="https://paizo.com/pathfinder">Pathfinder &copy;</a> easy by combining
+      advanced algorithms, extensions, and all your necessary tools into one online
+      dashboard so you can level up your enjoyment of the game while powering down
+      the chaos.
     </p>
     <p>
       To stay connected with Nurl, visit our <a href="https://nurl.website"
