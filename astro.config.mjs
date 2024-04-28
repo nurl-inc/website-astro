@@ -21,6 +21,10 @@ export default defineConfig({
       },
     }),
     solidJs(),
-    sitemap(),
+    sitemap({
+      filter: ({ route }) =>
+        route !== "https://nurl.website/thanks" &&
+        route !== "https://nurl.website/success",
+    }),
   ],
 });
