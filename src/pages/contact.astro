@@ -1,15 +1,68 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const errors = { name: "", company: "", email: "", message: "" };
+
+const isValidEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    );
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const gotcha = formData.get("bot-field");
+    const email = formData.get("email") as string;
+
+    if (gotcha) {
+      errors.email += "You gon' get you spam bot!";
+    }
+
+    if (typeof email !== "string" || !isValidEmail(email)) {
+      errors.email += "Email is not valid. ";
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <Layout title="Nurl, contact us for a partnership">
   <div class="contact-col">
     <main>
       <h1>Contact us</h1>
-      <p>Fill out the form and we will respond with the next steps.</p>
+      <p>
+        We are always looking for new partnerships and opportunities. If you
+        have a project in mind or just want to say hi, feel free to reach out to
+        us.
+      </p>
     </main>
 
-    <form>
+    <form
+      action="/contact-thanks"
+      autocomplete="off"
+      data-netlify="true"
+      method="POST"
+      netlify-honeypot
+    >
+      <p class="hidden" style="display:none">
+        <label>
+          Don’t fill this out if you’re human: <input
+            autocomplete="false"
+            name="bot-field"
+            type="text"
+          />
+        </label>
+      </p>
+      <input type="hidden" name="form-name" value="contact" />
+
+      {errors.email && <p>{errors.email}</p>}
+
       <div>
         <label for="name">Name (required)</label>
         <input
@@ -23,13 +76,12 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div>
-        <label for="name">Company (required)</label>
+        <label for="name">Company</label>
         <input
           aria-labelledby="help:company"
           type="text"
           id="company"
           name="company"
-          required
         />
         <small id="help:company">So we can do our research.</small>
       </div>
@@ -53,9 +105,10 @@ import Layout from "../layouts/Layout.astro";
           id="message"
           name="message"
           required></textarea>
-        <small id="help:message"
-          >Tell us about your project and goals with Nurl.</small
-        >
+        <small id="help:message">
+          Tell us about your project and what you are looking for or any other
+          inquiries.
+        </small>
       </div>
 
       <button type="submit">Submit</button>
@@ -121,6 +174,10 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
   }
 
+  :is(input, textarea):user-invalid {
+    border: 2px solid var(--rageQuitRed);
+  }
+
   small {
     color: var(--manaBlue);
     font-size: 0.75rem;
@@ -134,10 +191,53 @@ import Layout from "../layouts/Layout.astro";
     font-size: 1rem;
     height: 3rem;
     margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: var(--n00bYellow);
   }
 
   :is(input, textarea, button):focus {
     outline: 2px solid var(--manaBlue);
     outline-offset: 2px;
+  }
+
+  @media (min-width: 768px) {
+    .contact-col {
+      padding-inline-start: 2rem;
+      padding-inline-end: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    form {
+      gap: 1.5rem;
+    }
+
+    label {
+      font-size: 1.25rem;
+    }
+
+    input,
+    textarea {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    small {
+      font-size: 1rem;
+    }
+
+    button {
+      font-size: 1.25rem;
+      height: 4rem;
+    }
   }
 </style>
