@@ -1,0 +1,57 @@
+---
+const { heading, sub } = Astro.props;
+---
+
+<section>
+  <div>
+    <h2>{heading}</h2>
+    <p>{sub}</p>
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    padding-top: 4rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  div {
+    max-width: 800px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    padding-bottom: 1rem;
+    text-wrap: pretty;
+  }
+
+  p {
+    color: var(--manaBlue);
+    font-size: 1.125em;
+    padding-bottom: 3rem;
+    text-wrap: pretty;
+  }
+
+  @media screen and (min-width: 768px) {
+    section {
+      padding-bottom: 8rem;
+      padding-inline-start: 2rem;
+      padding-inline-end: 2rem;
+      padding-top: 6rem;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.25em;
+      margin-bottom: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const errors = { name: "", company: "", email: "", message: "" };
+
+const isValidEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    );
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const gotcha = formData.get("bot-field");
+    const email = formData.get("email") as string;
+
+    if (gotcha) {
+      errors.email += "You gon' get you spam bot!";
+    }
+
+    if (typeof email !== "string" || !isValidEmail(email)) {
+      errors.email += "Email is not valid. ";
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<Layout title="Nurl, contact us for a partnership">
+  <div class="contact-col">
+    <main>
+      <h1>Contact us</h1>
+      <p>
+        We are always looking for new partnerships and opportunities. If you
+        have a project in mind or just want to say hi, feel free to reach out to
+        us.
+      </p>
+    </main>
+
+    <form
+      action="/contact-thanks"
+      autocomplete="off"
+      data-netlify="true"
+      method="POST"
+      netlify-honeypot
+    >
+      <p class="hidden" style="display:none">
+        <label>
+          Don’t fill this out if you’re human: <input
+            autocomplete="false"
+            name="bot-field"
+            type="text"
+          />
+        </label>
+      </p>
+      <input type="hidden" name="form-name" value="contact" />
+
+      {errors.email && <p>{errors.email}</p>}
+
+      <div>
+        <label for="name">Name (required)</label>
+        <input
+          aria-labelledby="help:name"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+        <small id="help:name">So we know what to call you.</small>
+      </div>
+
+      <div>
+        <label for="name">Company</label>
+        <input
+          aria-labelledby="help:company"
+          type="text"
+          id="company"
+          name="company"
+        />
+        <small id="help:company">So we can do our research.</small>
+      </div>
+
+      <div>
+        <label for="email">Email (required)</label>
+        <input
+          aria-labelledby="help:email"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+        <small id="help:email">So we can respond to you.</small>
+      </div>
+
+      <div>
+        <label for="message">Message (required)</label>
+        <textarea
+          aria-labelledby="help:message"
+          id="message"
+          name="message"
+          required></textarea>
+        <small id="help:message">
+          Tell us about your project and what you are looking for or any other
+          inquiries.
+        </small>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  html {
+    background-color: #000029 !important;
+  }
+
+  .contact-col {
+    padding-bottom: 4rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: 88ch;
+  }
+
+  h1 {
+    color: var(--wizardWhite);
+    font-size: 2rem;
+    margin-block-end: 1rem;
+  }
+
+  p {
+    color: var(--manaBlue);
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 1rem;
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  label {
+    display: block;
+    color: var(--wizardWhite);
+    font-size: 1rem;
+  }
+
+  input,
+  textarea {
+    display: block;
+    background-color: var(--wizardWhite);
+    border: 1px solid var(--wizardWhite);
+    border-radius: 0.25em;
+    color: var(--tpkBlack);
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  :is(input, textarea):user-invalid {
+    border: 2px solid var(--rageQuitRed);
+  }
+
+  small {
+    color: var(--manaBlue);
+    font-size: 0.75rem;
+  }
+
+  button {
+    background-color: var(--sandboxGold);
+    border: 1px solid var(--sandboxGold);
+    border-radius: 0.25em;
+    color: #000029;
+    font-size: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: var(--n00bYellow);
+  }
+
+  :is(input, textarea, button):focus {
+    outline: 2px solid var(--manaBlue);
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 768px) {
+    .contact-col {
+      padding-inline-start: 2rem;
+      padding-inline-end: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    form {
+      gap: 1.5rem;
+    }
+
+    label {
+      font-size: 1.25rem;
+    }
+
+    input,
+    textarea {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    small {
+      font-size: 1rem;
+    }
+
+    button {
+      font-size: 1.25rem;
+      height: 4rem;
+    }
+  }
+</style>

@@ -43,10 +43,16 @@ const socialLinks = [
 <footer>
   <div class="footer-container">
     <section class="social-section">
-      <div class="footer-logo">
-        <a class="footer-logo-link" href="/">
-          <img src="/inverted-logo.svg" alt="Nurl Logo" />
-        </a>
+      <div class="footer-logo-group">
+        <div class="footer-logo">
+          <a class="footer-logo-link" href="/">
+            <img src="/inverted-logo.svg" alt="Nurl Logo" />
+          </a>
+        </div>
+
+        <div class="footer-logo">
+          <img src="/atpk-logo.svg" alt="Anti-TPK TPK Club" />
+        </div>
       </div>
 
       <hr />
@@ -83,6 +89,9 @@ const socialLinks = [
           <li>
             <a class="sitemap-link" href="/careers/">Careers</a>
           </li>
+          <li>
+            <a class="sitemap-link" href="/contact/">Contact</a>
+          </li>
         </ul>
       </div>
 
@@ -99,6 +108,9 @@ const socialLinks = [
               target="_blank"
               rel="noopener noreferrer">Developers</a
             >
+          </li>
+          <li>
+            <a class="sitemap-link" href="/publishers/">Publishers</a>
           </li>
         </ul>
       </div>
@@ -153,6 +165,11 @@ const socialLinks = [
     max-width: 60ch;
     padding: 1rem;
     width: 100%;
+  }
+
+  .footer-logo-group {
+    display: flex;
+    justify-content: center;
   }
 
   .footer-logo {

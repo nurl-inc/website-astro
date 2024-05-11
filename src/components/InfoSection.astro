@@ -1,0 +1,78 @@
+---
+const { heading, description, bgColor } = Astro.props;
+const bgStyle = bgColor ?? "#ebebff";
+---
+
+<section class="info-section">
+  <div class="info-section_col">
+    <h2 class="info-section-heading">{heading}</h2>
+    <div>
+      <p class="info-section-desc">{description}</p>
+      <hr class="info-section-hr" />
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style
+  define:vars={{
+    bgStyle,
+  }}
+>
+  .info-section {
+    background-color: var(--bgStyle);
+    padding-bottom: 4rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-top: 3rem;
+  }
+
+  .info-section-heading {
+    color: var(--tpkBlack);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-section-desc {
+    color: #000029;
+    font-size: 1.075rem;
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+  }
+
+  .info-section-hr {
+    border: 0;
+    border-top: 1px solid #c2c2ff;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .info-section {
+      padding-bottom: 10rem;
+      padding-inline-start: 2rem;
+      padding-inline-end: 2rem;
+      padding-top: 8rem;
+    }
+
+    .info-section_col {
+      margin: 0 auto;
+      max-width: 88ch;
+    }
+
+    .info-section-heading {
+      font-size: 2.5rem;
+    }
+
+    .info-section-desc {
+      font-size: 1.25rem;
+    }
+
+    .info-section-hr {
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+      width: 3rem;
+    }
+  }
+</style>
