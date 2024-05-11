@@ -22,9 +22,9 @@ export default defineConfig({
     }),
     solidJs(),
     sitemap({
-      filter: ({ route }) =>
-        route !== "https://nurl.website/thanks/" &&
-        route !== "https://nurl.website/success/",
+      filter: (page) =>
+        page !== "https://nurl.website/thanks/" &&
+        page !== "https://nurl.website/success/",
     }),
   ],
 });
