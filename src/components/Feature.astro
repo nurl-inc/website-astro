@@ -1,0 +1,109 @@
+---
+const { heading, sub, factoid } = Astro.props;
+---
+
+<main class="feature">
+  <div class="feature_img"></div>
+
+  <div class="feature_first-grid-item">
+    <div class="feature-header">
+      <h1 class="feature-heading">{heading}</h1>
+      <h2 class="feature-sub">{sub}</h2>
+      {factoid && <p class="feature-factoid">{factoid}</p>}
+    </div>
+
+    <div class="feature_slot">
+      <slot />
+    </div>
+  </div>
+</main>
+
+<style>
+  .feature {
+    padding-bottom: 4rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-top: 4rem;
+  }
+
+  .feature_img {
+    display: none;
+  }
+
+  .feature-header {
+    margin-bottom: 3rem;
+    text-wrap: pretty;
+  }
+
+  .feature-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .feature-sub {
+    color: var(--manaBlue);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .feature-factoid {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 768px) {
+    .feature {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+      height: 77dvh;
+      padding-inline-start: 3rem;
+      padding-inline-end: 3rem;
+    }
+
+    .feature_img {
+      display: block;
+      background-color: white;
+      background-image: url("/players-table.png");
+      background-position: center;
+      background-position-y: -40rem;
+      border-radius: 1em;
+      grid-column: 7 / span 6;
+      grid-row: 1;
+      height: 100%;
+      position: relative;
+    }
+
+    .feature_img::after {
+      bottom: -1.5rem;
+      color: var(--wizardWhite);
+      content: "Artwork by Marta Julia Dzikowska";
+      display: block;
+      font-size: 0.75rem;
+      padding-top: 1rem;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    .feature_first-grid-item {
+      grid-column: 1 / span 5;
+      padding-inline-start: 2rem;
+    }
+
+    .feature-heading {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-sub {
+      font-size: 1.75rem;
+      max-width: 44ch;
+    }
+  }
+</style>
