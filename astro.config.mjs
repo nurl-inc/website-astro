@@ -24,7 +24,8 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         page !== "https://nurl.website/thanks/" &&
-        page !== "https://nurl.website/success/",
+        page !== "https://nurl.website/success/" &&
+        page !== "https://nurl.website/contact-thanks/",
     }),
   ],
 });
