@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.0.12
     version: 0.0.12
   '@types/gtag.js':
-    specifier: ^0.0.18
-    version: 0.0.18
+    specifier: ^0.0.19
+    version: 0.0.19
   autoprefixer:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)
@@ -1846,8 +1846,8 @@ packages:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: false
 
-  /@types/gtag.js@0.0.18:
-    resolution: {integrity: sha512-GJxnIvuXuVhKaHfsOdzGipoOoXq72y3mdcncc9h6i6E7nlz89zBEj2wrLM7bqO5Xk9Lm2B94MwdQsSwRlaPSWw==}
+  /@types/gtag.js@0.0.19:
+    resolution: {integrity: sha512-KHoDzrf9rSd0mooKN576PjExpdk/XRrNu4RQnmigsScSTSidwyOUe9kDrHz9UPKjiBrx2QEsSkexbJSgS0j72w==}
     dev: true
 
   /@types/hast@3.0.4:
