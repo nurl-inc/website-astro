@@ -50,8 +50,8 @@ dependencies:
 
 devDependencies:
   '@react-email/render':
-    specifier: ^0.0.12
-    version: 0.0.12
+    specifier: ^0.0.13
+    version: 0.0.13
   '@types/gtag.js':
     specifier: ^0.0.18
     version: 0.0.18
@@ -1660,6 +1660,17 @@ packages:
       js-beautify: 1.15.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@react-email/render@0.0.13:
+    resolution: {integrity: sha512-lmBizrV+rQeSa3GjiL8/kPU0gENqO/wv+4xrlWANabp9UY3lTLXzy7HMRSE8YFBES9AbxP5VX1iRKuEnsoBDew==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      html-to-text: 9.0.5
+      js-beautify: 1.15.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: true
 
   /@rollup/rollup-android-arm-eabi@4.17.2:
     resolution: {integrity: sha512-NM0jFxY8bB8QLkoKxIQeObCaDlJKewVlIEkuyYKm5An1tdVZ966w2+MPQ2l8LBZLjR+SgyV+nRkTIunzOYBMLQ==}
