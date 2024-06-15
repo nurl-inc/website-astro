@@ -50,7 +50,7 @@ if (Astro.request.method === "POST") {
     <input type="hidden" name="form-name" value="waitlist" />
 
     {errors.email && <p>{errors.email}</p>}
-    <label for="email" class="cta">Join the waiting list</label>
+    <label for="email" class="cta">Join the wait list today</label>
     <div class="input-wrapper">
       <input
         autocomplete="false"
@@ -59,12 +59,13 @@ if (Astro.request.method === "POST") {
         type="email"
         id="email"
         name="email"
-        placeholder="Enter your email manually"
+        placeholder="Type your email"
         required
       />
     </div>
     <small id="email:help" style="display:block; margin-bottom: 1.5rem">
-      We'll let you know when we're ready to launch. No spam, we promise.
+      We'll send general updates and early access invites when we are ready to
+      launch.
     </small>
     <button class="early-btn" type="submit" class="cta">Let's do this!</button>
   </form>
