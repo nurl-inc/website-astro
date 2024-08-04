@@ -27,8 +27,8 @@ importers:
         specifier: ^4.1.0
         version: 4.2.0(solid-js@1.8.17)(vite@5.2.11)
       '@netlify/edge-functions':
-        specifier: ^2.6.1
-        version: 2.7.0
+        specifier: ^2.10.0
+        version: 2.10.0
       astro:
         specifier: ^4.0.3
         version: 4.8.2(typescript@5.4.5)
@@ -852,8 +852,8 @@ packages:
     resolution: {integrity: sha512-mE6PhwcoW70EX8+h+Y/4dLfHk33GFt/y5PzDJz56ktMyaVGFXMJ5BYLbUjdmGEABfE0x5GgAGyKbrbkYww2s3A==}
     engines: {node: '>=18'}
 
-  '@netlify/edge-functions@2.7.0':
-    resolution: {integrity: sha512-SplDdzmq161OR648P3sGOZ0vW9wo4/GFCQYWGmq3iepDuKl7J1eHaQxLk76cIFuZ3TivK49xFUs7x2DrYkEzAQ==}
+  '@netlify/edge-functions@2.10.0':
+    resolution: {integrity: sha512-toDBus02KyXTeErqXh9mFjH5ocGwSDO8w9q1TkSincqExtm8TMITg3iXr4/SPKE17nKt+olsEuIry5hyM8OJBQ==}
 
   '@netlify/functions@2.6.3':
     resolution: {integrity: sha512-7Z9gWyAuPI2NnBOvpYPD66KIWOgNznLz9BkyZ0c7qeRE6p23UCMVZ2VsrJpjPDgoJtKplGSBzASl6fQD7iEeWw==}
@@ -3659,7 +3659,7 @@ snapshots:
       outvariant: 1.4.2
       strict-event-emitter: 0.5.1
 
-  '@netlify/edge-functions@2.7.0': {}
+  '@netlify/edge-functions@2.10.0': {}
 
   '@netlify/functions@2.6.3(@opentelemetry/api@1.8.0)':
     dependencies:
