@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.4
         version: 2.1.0
       '@astrojs/sitemap':
-        specifier: ^3.1.4
-        version: 3.1.4
+        specifier: ^3.1.6
+        version: 3.1.6
       '@astrojs/solid-js':
         specifier: ^4.1.0
         version: 4.2.0(solid-js@1.8.17)(vite@5.2.11)
@@ -124,8 +124,8 @@ packages:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@astrojs/sitemap@3.1.4':
-    resolution: {integrity: sha512-po8CqDCK14O6phU1mB5C8SyVLyQEa+7pJM8oXxs1mVh8DgvxxaA5E7lak1vzOmBcyyyHBW32jakGqNYc66sBRw==}
+  '@astrojs/sitemap@3.1.6':
+    resolution: {integrity: sha512-1Qp2NvAzVImqA6y+LubKi1DVhve/hXXgFvB0szxiipzh7BvtuKe4oJJ9dXSqaubaTkt4nMa6dv6RCCAYeB6xaQ==}
 
   '@astrojs/solid-js@4.2.0':
     resolution: {integrity: sha512-DxlwdHCotk8ENYTFmqt7ZGm45Lwg4jR/kUyy7ZfR8bfKNB4RVQd4bItJid3nMm0MD6WVnF4UjUdf8L0ew9Jr9Q==}
@@ -2587,8 +2587,8 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  sitemap@7.1.1:
-    resolution: {integrity: sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==}
+  sitemap@7.1.2:
+    resolution: {integrity: sha512-ARCqzHJ0p4gWt+j7NlU5eDlIO9+Rkr/JhPFZKKQ1l5GCus7rJH4UdrlVAh0xC/gDS/Qir2UMxqYNHtsKr2rpCw==}
     engines: {node: '>=12.0.0', npm: '>=5.6.0'}
     hasBin: true
 
@@ -3113,9 +3113,9 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/sitemap@3.1.4':
+  '@astrojs/sitemap@3.1.6':
     dependencies:
-      sitemap: 7.1.1
+      sitemap: 7.1.2
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
@@ -5796,7 +5796,7 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  sitemap@7.1.1:
+  sitemap@7.1.2:
     dependencies:
       '@types/node': 17.0.45
       '@types/sax': 1.2.7
