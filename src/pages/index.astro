@@ -23,10 +23,21 @@ import PushNotify from "../assets/mgc/push-notify.webp";
 <Layout title="Nurl, the easiest way to play TTRPGs">
   <main class="container">
     <section class="feature-section">
+      <div class="netty">
+        <img
+          src="/netty-badge.svg"
+          alt="Official Netty Awards nominated for best game"
+        />
+      </div>
+
       <h1>Making tabletop roleplay games easy.</h1>
+      <a class="netty-statement" href="/blog/netty-awards-2024-winner/">
+        <strong>Voted 2024 Best Gaming App (Tabletop Role-play)</strong>
+      </a>
+
       <p class="headline-support">
-        Explore a new way to play with a user-friendly app designed for both new
-        and experienced players, ensuring an inclusive gaming experience.
+        Explore a new way to play with an award winning app designed for both
+        new and experienced players.
       </p>
       <EarlyAccessForm />
     </section>
@@ -262,6 +273,7 @@ import PushNotify from "../assets/mgc/push-notify.webp";
 
   main p {
     font-size: 1.3rem !important;
+    text-wrap: pretty;
   }
 
   section {
@@ -275,6 +287,7 @@ import PushNotify from "../assets/mgc/push-notify.webp";
     font-size: 1.125rem;
     line-height: 1.5;
     margin-bottom: 1.5rem;
+    text-wrap: pretty;
   }
 
   h1 {
@@ -284,7 +297,7 @@ import PushNotify from "../assets/mgc/push-notify.webp";
   h1,
   h2 {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   h3 {
@@ -300,6 +313,23 @@ import PushNotify from "../assets/mgc/push-notify.webp";
     margin: 0 auto;
     max-width: 80ch;
     width: 100%;
+  }
+
+  .netty {
+    margin-bottom: 1.5rem;
+    width: 8rem;
+  }
+
+  .netty-statement {
+    color: var(--wizardWhite);
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    transition: color 150ms ease-in-out;
+  }
+  .netty-statement:hover {
+    color: var(--tpkBlack);
   }
 
   section[class*="section-spotlight"] {
@@ -526,6 +556,17 @@ import PushNotify from "../assets/mgc/push-notify.webp";
 
     h2 {
       font-size: 3rem;
+    }
+
+    .netty {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 10rem;
+    }
+
+    .netty-statement {
+      font-size: 1.5rem;
     }
 
     .feature-section h2 {
