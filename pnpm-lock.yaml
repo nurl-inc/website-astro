@@ -12,8 +12,8 @@ importers:
         specifier: ^0.9.3
         version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       '@astrojs/markdoc':
-        specifier: ^0.11.3
-        version: 0.11.3(astro@4.15.8(rollup@4.21.2)(typescript@5.5.4))(react@18.2.0)
+        specifier: ^0.11.4
+        version: 0.11.4(astro@4.15.8(rollup@4.21.2)(typescript@5.5.4))(react@18.2.0)
       '@astrojs/netlify':
         specifier: ^5.5.1
         version: 5.5.1(astro@4.15.8(rollup@4.21.2)(typescript@5.5.4))
@@ -103,8 +103,8 @@ packages:
       prettier-plugin-astro:
         optional: true
 
-  '@astrojs/markdoc@0.11.3':
-    resolution: {integrity: sha512-t9pxu//dBTkaTNC3VMMSoh3WO9bTRXHD3gMuMdEaj5s/Qy7kZUtgoBdvZ6d+QHwXurRtL16lA9n0RXT0FJhGqw==}
+  '@astrojs/markdoc@0.11.4':
+    resolution: {integrity: sha512-6s60ZpsODsEvws57TEpUPXq5Uo+eSHsTVUUAQbbkSL+nQHIy1tR7tI6vbbO2y/VOLj214kATAc18/iRjFp2TbQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
@@ -3021,7 +3021,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@astrojs/markdoc@0.11.3(astro@4.15.8(rollup@4.21.2)(typescript@5.5.4))(react@18.2.0)':
+  '@astrojs/markdoc@0.11.4(astro@4.15.8(rollup@4.21.2)(typescript@5.5.4))(react@18.2.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/markdown-remark': 5.2.0
@@ -3032,8 +3032,6 @@ snapshots:
       github-slugger: 2.0.0
       gray-matter: 4.0.3
       htmlparser2: 9.1.0
-      kleur: 4.1.5
-      zod: 3.23.8
     transitivePeerDependencies:
       - '@types/react'
       - react
