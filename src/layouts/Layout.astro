@@ -177,6 +177,11 @@ const n00bYellow = "#ffed00";
     font-size: 1rem;
   }
 
+  body :is(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid var(--manaBlue);
+    outline-offset: 2px;
+  }
+
   h1,
   h2,
   h3,
