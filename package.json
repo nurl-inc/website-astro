@@ -14,7 +14,7 @@
     "@astrojs/netlify": "^5.5.3",
     "@astrojs/partytown": "^2.1.2",
     "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/solid-js": "^4.4.1",
+    "@astrojs/solid-js": "^4.4.2",
     "@netlify/edge-functions": "^2.10.0",
     "astro": "^4.15.8",
     "astro-breadcrumbs": "^3.0.1",
