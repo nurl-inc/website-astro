@@ -2572,37 +2572,6 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  vite@5.4.3:
-    resolution: {integrity: sha512-IH+nl64eq9lJjFqU+/yrRnrHPVTlgy42/+IzbOdaFDVlyLgI/wDlf+FCobXLX1cT0X5+7LMyH1mIy2xJdLfo8Q==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-
   vite@5.4.8:
     resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -2957,7 +2926,7 @@ snapshots:
       '@vercel/nft': 0.27.4
       astro: 4.15.11(rollup@4.21.2)(typescript@5.5.4)
       esbuild: 0.21.5
-      vite: 5.4.3
+      vite: 5.4.8
     transitivePeerDependencies:
       - '@types/node'
       - encoding
@@ -5807,14 +5776,6 @@ snapshots:
       vitefu: 0.2.5(vite@5.4.8)
     transitivePeerDependencies:
       - supports-color
-
-  vite@5.4.3:
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.4.45
-      rollup: 4.21.2
-    optionalDependencies:
-      fsevents: 2.3.3
 
   vite@5.4.8:
     dependencies:
