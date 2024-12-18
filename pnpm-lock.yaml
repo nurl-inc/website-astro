@@ -50,6 +50,9 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
+      verifier-node:
+        specifier: ^1.0.2
+        version: 1.0.2
     devDependencies:
       '@react-email/render':
         specifier: ^1.0.1
@@ -2650,6 +2653,9 @@ packages:
 
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
+
+  verifier-node@1.0.2:
+    resolution: {integrity: sha512-e+JXsQ1PJDM56RKYj4GRqArvcX1Ws0fsmlFjOdcY8O+YoT9YpCvAv3YB5kTd4mIV0dOIhr/sRINEAA7trDhUrA==}
 
   vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
@@ -5981,6 +5987,8 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   validate-html-nesting@1.2.2: {}
+
+  verifier-node@1.0.2: {}
 
   vfile-location@5.0.2:
     dependencies:

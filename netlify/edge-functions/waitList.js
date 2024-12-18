@@ -1,13 +1,30 @@
 import { Resend } from "resend";
-
+import verifier from "verifier-node";
 export const config = { path: "/success" };
 
 export default async function joinWaitList(req) {
   const formData = await req.formData();
   const email = formData.get("email");
+  const verifierKey = Netlify.env.get("VERIFIER_KEY");
   const resendKey = Netlify.env.get("RESEND_KEY");
   const audienceId = "be0906d7-afca-4a26-a631-98b970ff8388";
   const resend = new Resend(resendKey);
+  let isValid = false;
+
+  // verify email
+  try {
+    const response = await verifier.verify(email, verifierKey);
+    console.log("recaptcha data", response, response.valid());
+    isValid = response.valid();
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+
+  if (!isValid) {
+    return new Response("Invalid email", { status: 400 });
+  }
 
   try {
     const { data: listData, error: listError } = await resend.contacts.list({
