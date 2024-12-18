@@ -9,7 +9,19 @@ export default async function joinWaitList(req) {
   const resendKey = Netlify.env.get("RESEND_KEY");
   const audienceId = "be0906d7-afca-4a26-a631-98b970ff8388";
   const resend = new Resend(resendKey);
-  let isValid = false;
+
+  const badDomains = ["vtext.com", "txt.att.net", "googlemail.com"];
+  let isValid = true;
+
+  if (badDomains.includes(email.split("@")[1])) {
+    isValid = false;
+    return new Response("Invalid email", { status: 400 });
+  }
+
+  if (/^\d/.test(email)) {
+    isValid = false;
+    return new Response("Invalid email", { status: 400 });
+  }
 
   // verify email
   try {
