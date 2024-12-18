@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import verifier from "verifier-node";
 
 export const config = { path: "/contact-thanks" };
 
@@ -10,8 +11,25 @@ export default async function contactNurl(req) {
   const message = formData.get("message");
 
   const resendKey = Netlify.env.get("RESEND_KEY");
+  const verifierKey = Netlify.env.get("VERIFIER_KEY");
   const audienceId = "ab7d1118-3574-48cf-b190-cc1773f5a2c7";
   const resend = new Resend(resendKey);
+  let isValid = false;
+
+  // verify email
+  try {
+    const response = await verifier.verify(email, verifierKey);
+    console.log("recaptcha data", response, response.valid());
+    isValid = response.valid();
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+
+  if (!isValid) {
+    return new Response("Invalid email", { status: 400 });
+  }
 
   try {
     const { error } = await resend.emails.send({
