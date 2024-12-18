@@ -15,10 +15,12 @@ export default async function joinWaitList(req) {
 
   if (badDomains.includes(email.split("@")[1])) {
     isValid = false;
+    return new Response("Invalid email", { status: 400 });
   }
 
   if (/^\d/.test(email)) {
     isValid = false;
+    return new Response("Invalid email", { status: 400 });
   }
 
   // verify email
